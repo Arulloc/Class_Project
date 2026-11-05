@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="rotating_target">
+    <static>true</static>
+    <link name="target_body">
+
+      <!-- Main 10 cm cube -->
+      <visual name="cube">
+        <geometry>
+          <box><size>0.10 0.10 0.10</size></box>
+        </geometry>
+        <material>
+          <ambient>0.35 0.65 0.9 1</ambient>
+          <diffuse>0.35 0.65 0.9 1</diffuse>
+        </material>
+      </visual>
+
+      <collision name="cube_collision">
+        <geometry>
+          <box><size>0.10 0.10 0.10</size></box>
+        </geometry>
+      </collision>
+
+      <!-- Upper arm of the loop handle -->
+      <visual name="handle_upper">
+        <pose>0.09 0 0.035 0 0 0</pose>
+        <geometry>
+          <box><size>0.08 0.012 0.012</size></box>
+        </geometry>
+      </visual>
+
+      <!-- Lower arm of the loop handle -->
+      <visual name="handle_lower">
+        <pose>0.09 0 -0.035 0 0 0</pose>
+        <geometry>
+          <box><size>0.08 0.012 0.012</size></box>
+        </geometry>
+      </visual>
+
+      <!-- Outer grip connecting the two arms -->
+      <visual name="handle_outer">
+        <pose>0.13 0 0 0 0 0</pose>
+        <geometry>
+          <box><size>0.012 0.012 0.082</size></box>
+        </geometry>
+      </visual>
+
+    </link>
+  </model>
+</sdf>
