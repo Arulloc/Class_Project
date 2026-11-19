@@ -35,7 +35,7 @@ git -C src/ros2_robotiq_gripper checkout e58bcda6a73bfc7570ffcc4f53067284e6fa3ca
 # 4. Build only what we use; skip Kinova's real-arm driver
 echo "== 4. Building =="
 source /opt/ros/humble/setup.bash
-colcon build --packages-select kortex_description kortex_bringup robotiq_description --packages-ignore kortex_driver kortex_api
+colcon build --packages-select kortex_description kortex_bringup robotiq_description rotating_target --packages-ignore kortex_driver kortex_api
 
 echo ""
 echo "Setup complete. In each new terminal run:"
