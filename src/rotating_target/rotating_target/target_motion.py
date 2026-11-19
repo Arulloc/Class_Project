@@ -1,10 +1,10 @@
-
 import math
 from pathlib import Path
 
 import rclpy
 from rclpy.node import Node
 from gazebo_msgs.srv import SpawnEntity, SetEntityState
+from geometry_msgs.msg import PoseStamped
 
 
 class TargetMotion(Node):
@@ -20,6 +20,9 @@ class TargetMotion(Node):
         self.declare_parameter('x', 0.75)
         self.declare_parameter('y', 0.0)
         self.declare_parameter('z', 0.05)
+        # Distance from the cube centre to the handle's outer grip (m),
+        # matching handle_outer in models/rotating_target/model.sdf.
+        self.declare_parameter('handle_offset', 0.13)
 
         self.mode = self.get_parameter('mode').value
         self.radius = float(self.get_parameter('radius').value)
@@ -31,6 +34,8 @@ class TargetMotion(Node):
         self.x0 = float(self.get_parameter('x').value)
         self.y0 = float(self.get_parameter('y').value)
         self.z0 = float(self.get_parameter('z').value)
+        self.handle_offset = float(
+            self.get_parameter('handle_offset').value)
 
         if self.mode not in ('spin', 'orbit', 'both'):
             raise ValueError('Mode must be spin, orbit, or both')
@@ -53,6 +58,12 @@ class TargetMotion(Node):
 
         self.state_client = self.create_client(
             SetEntityState, '/set_entity_state')
+
+        # Ground truth: the handle's exact position and heading each
+        # update, timestamped with simulation time. Used by prediction
+        # (before vision exists) and as the reference for experiments.
+        self.handle_pub = self.create_publisher(
+            PoseStamped, '/target/handle_true', 10)
 
         self.spawned = False
         self.start_time = None
@@ -183,6 +194,18 @@ class TargetMotion(Node):
         state.twist.angular.z = 0.0
 
         self.state_future = self.state_client.call_async(request)
+
+        # Publish where the handle is for this same pose. The handle
+        # sits handle_offset metres out along the cube's +x axis, so
+        # rotate that offset by yaw and add the cube position.
+        handle = PoseStamped()
+        handle.header.stamp = now.to_msg()
+        handle.header.frame_id = 'world'
+        handle.pose.position.x = x + self.handle_offset * math.cos(yaw)
+        handle.pose.position.y = y + self.handle_offset * math.sin(yaw)
+        handle.pose.position.z = z
+        handle.pose.orientation = state.pose.orientation
+        self.handle_pub.publish(handle)
 
 
 def main(args=None):
