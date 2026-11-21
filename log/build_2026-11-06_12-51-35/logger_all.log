@@ -1,0 +1,748 @@
+[0.345s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'kortex_description', 'kortex_bringup', 'robotiq_description', '--packages-ignore', 'kortex_driver', 'kortex_api']
+[0.345s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=2, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=['kortex_driver', 'kortex_api'], packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['kortex_description', 'kortex_bringup', 'robotiq_description'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7c42ce636980>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7c42ce7235e0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7c42ce7235e0>>)
+[0.670s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.671s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.671s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.671s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.671s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.671s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.671s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/common'
+[0.671s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.671s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.671s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.671s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.671s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.671s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.671s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.671s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.671s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(Desktop) by extensions ['ignore', 'ignore_ament_install']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(Desktop) by extension 'ignore'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(Desktop) by extension 'ignore_ament_install'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(Desktop) by extensions ['colcon_pkg']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(Desktop) by extension 'colcon_pkg'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(Desktop) by extensions ['colcon_meta']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(Desktop) by extension 'colcon_meta'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(Desktop) by extensions ['ros']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(Desktop) by extension 'ros'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(Desktop) by extensions ['cmake', 'python']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(Desktop) by extension 'cmake'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(Desktop) by extension 'python'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(Desktop) by extensions ['python_setup_py']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(Desktop) by extension 'python_setup_py'
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(Documents) by extensions ['ignore', 'ignore_ament_install']
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(Documents) by extension 'ignore'
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(Documents) by extension 'ignore_ament_install'
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(Documents) by extensions ['colcon_pkg']
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(Documents) by extension 'colcon_pkg'
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(Documents) by extensions ['colcon_meta']
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(Documents) by extension 'colcon_meta'
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(Documents) by extensions ['ros']
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(Documents) by extension 'ros'
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(Documents) by extensions ['cmake', 'python']
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(Documents) by extension 'cmake'
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(Documents) by extension 'python'
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(Documents) by extensions ['python_setup_py']
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(Documents) by extension 'python_setup_py'
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(Downloads) by extensions ['ignore', 'ignore_ament_install']
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(Downloads) by extension 'ignore'
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(Downloads) by extension 'ignore_ament_install'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(Downloads) by extensions ['colcon_pkg']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(Downloads) by extension 'colcon_pkg'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(Downloads) by extensions ['colcon_meta']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(Downloads) by extension 'colcon_meta'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(Downloads) by extensions ['ros']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(Downloads) by extension 'ros'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(Downloads) by extensions ['cmake', 'python']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(Downloads) by extension 'cmake'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(Downloads) by extension 'python'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(Downloads) by extensions ['python_setup_py']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(Downloads) by extension 'python_setup_py'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(Music) by extensions ['ignore', 'ignore_ament_install']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(Music) by extension 'ignore'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(Music) by extension 'ignore_ament_install'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(Music) by extensions ['colcon_pkg']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(Music) by extension 'colcon_pkg'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(Music) by extensions ['colcon_meta']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(Music) by extension 'colcon_meta'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(Music) by extensions ['ros']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(Music) by extension 'ros'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(Music) by extensions ['cmake', 'python']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(Music) by extension 'cmake'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(Music) by extension 'python'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(Music) by extensions ['python_setup_py']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(Music) by extension 'python_setup_py'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(Pictures) by extensions ['ignore', 'ignore_ament_install']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(Pictures) by extension 'ignore'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(Pictures) by extension 'ignore_ament_install'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(Pictures) by extensions ['colcon_pkg']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(Pictures) by extension 'colcon_pkg'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(Pictures) by extensions ['colcon_meta']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(Pictures) by extension 'colcon_meta'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(Pictures) by extensions ['ros']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(Pictures) by extension 'ros'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(Pictures) by extensions ['cmake', 'python']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(Pictures) by extension 'cmake'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(Pictures) by extension 'python'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(Pictures) by extensions ['python_setup_py']
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(Pictures) by extension 'python_setup_py'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(Public) by extensions ['ignore', 'ignore_ament_install']
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(Public) by extension 'ignore'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(Public) by extension 'ignore_ament_install'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(Public) by extensions ['colcon_pkg']
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(Public) by extension 'colcon_pkg'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(Public) by extensions ['colcon_meta']
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(Public) by extension 'colcon_meta'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(Public) by extensions ['ros']
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(Public) by extension 'ros'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(Public) by extensions ['cmake', 'python']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(Public) by extension 'cmake'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(Public) by extension 'python'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(Public) by extensions ['python_setup_py']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(Public) by extension 'python_setup_py'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(Templates) by extensions ['ignore', 'ignore_ament_install']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(Templates) by extension 'ignore'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(Templates) by extension 'ignore_ament_install'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(Templates) by extensions ['colcon_pkg']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(Templates) by extension 'colcon_pkg'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(Templates) by extensions ['colcon_meta']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(Templates) by extension 'colcon_meta'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(Templates) by extensions ['ros']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(Templates) by extension 'ros'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(Templates) by extensions ['cmake', 'python']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(Templates) by extension 'cmake'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(Templates) by extension 'python'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(Templates) by extensions ['python_setup_py']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(Templates) by extension 'python_setup_py'
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(Videos) by extensions ['ignore', 'ignore_ament_install']
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(Videos) by extension 'ignore'
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(Videos) by extension 'ignore_ament_install'
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(Videos) by extensions ['colcon_pkg']
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(Videos) by extension 'colcon_pkg'
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(Videos) by extensions ['colcon_meta']
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(Videos) by extension 'colcon_meta'
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(Videos) by extensions ['ros']
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(Videos) by extension 'ros'
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(Videos) by extensions ['cmake', 'python']
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(Videos) by extension 'cmake'
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(Videos) by extension 'python'
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(Videos) by extensions ['python_setup_py']
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(Videos) by extension 'python_setup_py'
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(snap) by extensions ['ignore', 'ignore_ament_install']
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(snap) by extension 'ignore'
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(snap) by extension 'ignore_ament_install'
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(snap) by extensions ['colcon_pkg']
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(snap) by extension 'colcon_pkg'
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(snap) by extensions ['colcon_meta']
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(snap) by extension 'colcon_meta'
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(snap) by extensions ['ros']
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(snap) by extension 'ros'
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(snap) by extensions ['cmake', 'python']
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(snap) by extension 'cmake'
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(snap) by extension 'python'
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(snap) by extensions ['python_setup_py']
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(snap) by extension 'python_setup_py'
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox) by extensions ['ignore', 'ignore_ament_install']
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox) by extension 'ignore'
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox) by extension 'ignore_ament_install'
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox) by extensions ['colcon_pkg']
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox) by extension 'colcon_pkg'
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox) by extensions ['colcon_meta']
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox) by extension 'colcon_meta'
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox) by extensions ['ros']
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox) by extension 'ros'
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox) by extensions ['cmake', 'python']
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox) by extension 'cmake'
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox) by extension 'python'
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox) by extensions ['python_setup_py']
+[0.700s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox) by extension 'python_setup_py'
+[0.701s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/2987) by extensions ['ignore', 'ignore_ament_install']
+[0.701s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/2987) by extension 'ignore'
+[0.701s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/2987) by extension 'ignore_ament_install'
+[0.701s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/2987) by extensions ['colcon_pkg']
+[0.701s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/2987) by extension 'colcon_pkg'
+[0.701s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/2987) by extensions ['colcon_meta']
+[0.701s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/2987) by extension 'colcon_meta'
+[0.701s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/2987) by extensions ['ros']
+[0.701s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/2987) by extension 'ros'
+[0.701s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/2987) by extensions ['cmake', 'python']
+[0.701s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/2987) by extension 'cmake'
+[0.701s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/2987) by extension 'python'
+[0.701s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/2987) by extensions ['python_setup_py']
+[0.701s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/2987) by extension 'python_setup_py'
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/3026) by extensions ['ignore', 'ignore_ament_install']
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/3026) by extension 'ignore'
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/3026) by extension 'ignore_ament_install'
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/3026) by extensions ['colcon_pkg']
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/3026) by extension 'colcon_pkg'
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/3026) by extensions ['colcon_meta']
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/3026) by extension 'colcon_meta'
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/3026) by extensions ['ros']
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/3026) by extension 'ros'
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/3026) by extensions ['cmake', 'python']
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/3026) by extension 'cmake'
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/3026) by extension 'python'
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/3026) by extensions ['python_setup_py']
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/3026) by extension 'python_setup_py'
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/common) by extensions ['ignore', 'ignore_ament_install']
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/common) by extension 'ignore'
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/common) by extension 'ignore_ament_install'
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/common) by extensions ['colcon_pkg']
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/common) by extension 'colcon_pkg'
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/common) by extensions ['colcon_meta']
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/common) by extension 'colcon_meta'
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/common) by extensions ['ros']
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/common) by extension 'ros'
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/common) by extensions ['cmake', 'python']
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/common) by extension 'cmake'
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/common) by extension 'python'
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/common) by extensions ['python_setup_py']
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(snap/firefox/common) by extension 'python_setup_py'
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store) by extensions ['ignore', 'ignore_ament_install']
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store) by extension 'ignore'
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store) by extension 'ignore_ament_install'
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store) by extensions ['colcon_pkg']
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store) by extension 'colcon_pkg'
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store) by extensions ['colcon_meta']
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store) by extension 'colcon_meta'
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store) by extensions ['ros']
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store) by extension 'ros'
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store) by extensions ['cmake', 'python']
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store) by extension 'cmake'
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store) by extension 'python'
+[0.705s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store) by extensions ['python_setup_py']
+[0.705s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store) by extension 'python_setup_py'
+[0.705s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/1113) by extensions ['ignore', 'ignore_ament_install']
+[0.705s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/1113) by extension 'ignore'
+[0.705s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/1113) by extension 'ignore_ament_install'
+[0.705s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/1113) by extensions ['colcon_pkg']
+[0.705s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/1113) by extension 'colcon_pkg'
+[0.705s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/1113) by extensions ['colcon_meta']
+[0.705s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/1113) by extension 'colcon_meta'
+[0.705s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/1113) by extensions ['ros']
+[0.705s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/1113) by extension 'ros'
+[0.705s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/1113) by extensions ['cmake', 'python']
+[0.705s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/1113) by extension 'cmake'
+[0.706s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/1113) by extension 'python'
+[0.706s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/1113) by extensions ['python_setup_py']
+[0.706s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/1113) by extension 'python_setup_py'
+[0.706s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/common) by extensions ['ignore', 'ignore_ament_install']
+[0.706s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/common) by extension 'ignore'
+[0.706s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/common) by extension 'ignore_ament_install'
+[0.706s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/common) by extensions ['colcon_pkg']
+[0.706s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/common) by extension 'colcon_pkg'
+[0.706s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/common) by extensions ['colcon_meta']
+[0.706s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/common) by extension 'colcon_meta'
+[0.706s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/common) by extensions ['ros']
+[0.706s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/common) by extension 'ros'
+[0.706s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/common) by extensions ['cmake', 'python']
+[0.706s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/common) by extension 'cmake'
+[0.706s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/common) by extension 'python'
+[0.706s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/common) by extensions ['python_setup_py']
+[0.706s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snap-store/common) by extension 'python_setup_py'
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration) by extensions ['ignore', 'ignore_ament_install']
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration) by extension 'ignore'
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration) by extension 'ignore_ament_install'
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration) by extensions ['colcon_pkg']
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration) by extension 'colcon_pkg'
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration) by extensions ['colcon_meta']
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration) by extension 'colcon_meta'
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration) by extensions ['ros']
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration) by extension 'ros'
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration) by extensions ['cmake', 'python']
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration) by extension 'cmake'
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration) by extension 'python'
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration) by extensions ['python_setup_py']
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration) by extension 'python_setup_py'
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/83) by extensions ['ignore', 'ignore_ament_install']
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/83) by extension 'ignore'
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/83) by extension 'ignore_ament_install'
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/83) by extensions ['colcon_pkg']
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/83) by extension 'colcon_pkg'
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/83) by extensions ['colcon_meta']
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/83) by extension 'colcon_meta'
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/83) by extensions ['ros']
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/83) by extension 'ros'
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/83) by extensions ['cmake', 'python']
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/83) by extension 'cmake'
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/83) by extension 'python'
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/83) by extensions ['python_setup_py']
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/83) by extension 'python_setup_py'
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/common) by extensions ['ignore', 'ignore_ament_install']
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/common) by extension 'ignore'
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/common) by extension 'ignore_ament_install'
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/common) by extensions ['colcon_pkg']
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/common) by extension 'colcon_pkg'
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/common) by extensions ['colcon_meta']
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/common) by extension 'colcon_meta'
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/common) by extensions ['ros']
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/common) by extension 'ros'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/common) by extensions ['cmake', 'python']
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/common) by extension 'cmake'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/common) by extension 'python'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/common) by extensions ['python_setup_py']
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(snap/snapd-desktop-integration/common) by extension 'python_setup_py'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex) by extensions ['ignore', 'ignore_ament_install']
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex) by extension 'ignore'
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex) by extension 'ignore_ament_install'
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex) by extensions ['colcon_pkg']
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex) by extension 'colcon_pkg'
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex) by extensions ['colcon_meta']
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex) by extension 'colcon_meta'
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex) by extensions ['ros']
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex) by extension 'ros'
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex) by extensions ['cmake', 'python']
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex) by extension 'cmake'
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex) by extension 'python'
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex) by extensions ['python_setup_py']
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex) by extension 'python_setup_py'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty) by extensions ['ignore', 'ignore_ament_install']
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty) by extension 'ignore'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty) by extension 'ignore_ament_install'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty) by extensions ['colcon_pkg']
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty) by extension 'colcon_pkg'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty) by extensions ['colcon_meta']
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty) by extension 'colcon_meta'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty) by extensions ['ros']
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty) by extension 'ros'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty) by extensions ['cmake', 'python']
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty) by extension 'cmake'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty) by extension 'python'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty) by extensions ['python_setup_py']
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty) by extension 'python_setup_py'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration) by extensions ['ignore', 'ignore_ament_install']
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration) by extension 'ignore'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration) by extension 'ignore_ament_install'
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration) by extensions ['colcon_pkg']
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration) by extension 'colcon_pkg'
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration) by extensions ['colcon_meta']
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration) by extension 'colcon_meta'
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration) by extensions ['ros']
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration) by extension 'ros'
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration) by extensions ['cmake', 'python']
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration) by extension 'cmake'
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration) by extension 'python'
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration) by extensions ['python_setup_py']
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration) by extension 'python_setup_py'
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extensions ['ignore', 'ignore_ament_install']
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extension 'ignore'
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extension 'ignore_ament_install'
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extensions ['colcon_pkg']
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extension 'colcon_pkg'
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extensions ['colcon_meta']
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extension 'colcon_meta'
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extensions ['ros']
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extension 'ros'
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extensions ['cmake', 'python']
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extension 'cmake'
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extension 'python'
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extensions ['python_setup_py']
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extension 'python_setup_py'
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc) by extensions ['ignore', 'ignore_ament_install']
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc) by extension 'ignore'
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc) by extension 'ignore_ament_install'
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc) by extensions ['colcon_pkg']
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc) by extension 'colcon_pkg'
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc) by extensions ['colcon_meta']
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc) by extension 'colcon_meta'
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc) by extensions ['ros']
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc) by extension 'ros'
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc) by extensions ['cmake', 'python']
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc) by extension 'cmake'
+[0.715s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc) by extension 'python'
+[0.715s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc) by extensions ['python_setup_py']
+[0.715s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc) by extension 'python_setup_py'
+[0.715s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc/resources) by extensions ['ignore', 'ignore_ament_install']
+[0.715s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc/resources) by extension 'ignore'
+[0.715s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc/resources) by extension 'ignore_ament_install'
+[0.715s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc/resources) by extensions ['colcon_pkg']
+[0.715s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc/resources) by extension 'colcon_pkg'
+[0.715s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc/resources) by extensions ['colcon_meta']
+[0.715s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc/resources) by extension 'colcon_meta'
+[0.715s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc/resources) by extensions ['ros']
+[0.715s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc/resources) by extension 'ros'
+[0.715s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc/resources) by extensions ['cmake', 'python']
+[0.715s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc/resources) by extension 'cmake'
+[0.715s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc/resources) by extension 'python'
+[0.715s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc/resources) by extensions ['python_setup_py']
+[0.715s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/doc/resources) by extension 'python_setup_py'
+[0.716s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_api) by extensions ['ignore', 'ignore_ament_install']
+[0.716s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_api) by extension 'ignore'
+[0.716s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_api) by extension 'ignore_ament_install'
+[0.716s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_api) by extensions ['colcon_pkg']
+[0.716s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_api) by extension 'colcon_pkg'
+[0.716s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_api) by extensions ['colcon_meta']
+[0.716s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_api) by extension 'colcon_meta'
+[0.716s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_api) by extensions ['ros']
+[0.716s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_api) by extension 'ros'
+[0.719s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_kortex/kortex_api' with type 'ros.ament_cmake' and name 'kortex_api'
+[0.719s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.719s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_bringup) by extension 'ignore'
+[0.719s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_bringup) by extension 'ignore_ament_install'
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_bringup) by extensions ['colcon_pkg']
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_bringup) by extension 'colcon_pkg'
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_bringup) by extensions ['colcon_meta']
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_bringup) by extension 'colcon_meta'
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_bringup) by extensions ['ros']
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_bringup) by extension 'ros'
+[0.720s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_kortex/kortex_bringup' with type 'ros.ament_cmake' and name 'kortex_bringup'
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_description) by extensions ['ignore', 'ignore_ament_install']
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_description) by extension 'ignore'
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_description) by extension 'ignore_ament_install'
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_description) by extensions ['colcon_pkg']
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_description) by extension 'colcon_pkg'
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_description) by extensions ['colcon_meta']
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_description) by extension 'colcon_meta'
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_description) by extensions ['ros']
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_description) by extension 'ros'
+[0.722s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_kortex/kortex_description' with type 'ros.ament_cmake' and name 'kortex_description'
+[0.722s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_driver) by extensions ['ignore', 'ignore_ament_install']
+[0.722s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_driver) by extension 'ignore'
+[0.722s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_driver) by extension 'ignore_ament_install'
+[0.722s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_driver) by extensions ['colcon_pkg']
+[0.722s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_driver) by extension 'colcon_pkg'
+[0.722s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_driver) by extensions ['colcon_meta']
+[0.722s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_driver) by extension 'colcon_meta'
+[0.722s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_driver) by extensions ['ros']
+[0.722s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_driver) by extension 'ros'
+[0.723s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_kortex/kortex_driver' with type 'ros.ament_cmake' and name 'kortex_driver'
+[0.723s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config) by extensions ['ignore', 'ignore_ament_install']
+[0.723s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config) by extension 'ignore'
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config) by extension 'ignore_ament_install'
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config) by extensions ['colcon_pkg']
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config) by extension 'colcon_pkg'
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config) by extensions ['colcon_meta']
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config) by extension 'colcon_meta'
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config) by extensions ['ros']
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config) by extension 'ros'
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config) by extensions ['cmake', 'python']
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config) by extension 'cmake'
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config) by extension 'python'
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config) by extensions ['python_setup_py']
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config) by extension 'python_setup_py'
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_6dof_robotiq_2f_85_moveit_config) by extensions ['ignore', 'ignore_ament_install']
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_6dof_robotiq_2f_85_moveit_config) by extension 'ignore'
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_6dof_robotiq_2f_85_moveit_config) by extension 'ignore_ament_install'
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_6dof_robotiq_2f_85_moveit_config) by extensions ['colcon_pkg']
+[0.724s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_6dof_robotiq_2f_85_moveit_config) by extension 'colcon_pkg'
+[0.725s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_6dof_robotiq_2f_85_moveit_config) by extensions ['colcon_meta']
+[0.725s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_6dof_robotiq_2f_85_moveit_config) by extension 'colcon_meta'
+[0.725s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_6dof_robotiq_2f_85_moveit_config) by extensions ['ros']
+[0.725s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_6dof_robotiq_2f_85_moveit_config) by extension 'ros'
+[0.726s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_kortex/kortex_moveit_config/kinova_gen3_6dof_robotiq_2f_85_moveit_config' with type 'ros.ament_cmake' and name 'kinova_gen3_6dof_robotiq_2f_85_moveit_config'
+[0.726s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_7dof_robotiq_2f_85_moveit_config) by extensions ['ignore', 'ignore_ament_install']
+[0.726s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_7dof_robotiq_2f_85_moveit_config) by extension 'ignore'
+[0.726s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_7dof_robotiq_2f_85_moveit_config) by extension 'ignore_ament_install'
+[0.726s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_7dof_robotiq_2f_85_moveit_config) by extensions ['colcon_pkg']
+[0.726s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_7dof_robotiq_2f_85_moveit_config) by extension 'colcon_pkg'
+[0.726s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_7dof_robotiq_2f_85_moveit_config) by extensions ['colcon_meta']
+[0.726s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_7dof_robotiq_2f_85_moveit_config) by extension 'colcon_meta'
+[0.726s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_7dof_robotiq_2f_85_moveit_config) by extensions ['ros']
+[0.726s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_7dof_robotiq_2f_85_moveit_config) by extension 'ros'
+[0.727s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_kortex/kortex_moveit_config/kinova_gen3_7dof_robotiq_2f_85_moveit_config' with type 'ros.ament_cmake' and name 'kinova_gen3_7dof_robotiq_2f_85_moveit_config'
+[0.727s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_lite_moveit_config) by extensions ['ignore', 'ignore_ament_install']
+[0.727s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_lite_moveit_config) by extension 'ignore'
+[0.727s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_lite_moveit_config) by extension 'ignore_ament_install'
+[0.727s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_lite_moveit_config) by extensions ['colcon_pkg']
+[0.727s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_lite_moveit_config) by extension 'colcon_pkg'
+[0.727s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_lite_moveit_config) by extensions ['colcon_meta']
+[0.728s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_lite_moveit_config) by extension 'colcon_meta'
+[0.728s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_lite_moveit_config) by extensions ['ros']
+[0.728s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/kinova_gen3_lite_moveit_config) by extension 'ros'
+[0.729s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_kortex/kortex_moveit_config/kinova_gen3_lite_moveit_config' with type 'ros.ament_cmake' and name 'kinova_gen3_lite_moveit_config'
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/launch) by extensions ['ignore', 'ignore_ament_install']
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/launch) by extension 'ignore'
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/launch) by extension 'ignore_ament_install'
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/launch) by extensions ['colcon_pkg']
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/launch) by extension 'colcon_pkg'
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/launch) by extensions ['colcon_meta']
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/launch) by extension 'colcon_meta'
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/launch) by extensions ['ros']
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/launch) by extension 'ros'
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/launch) by extensions ['cmake', 'python']
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/launch) by extension 'cmake'
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/launch) by extension 'python'
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/launch) by extensions ['python_setup_py']
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_kortex/kortex_moveit_config/launch) by extension 'python_setup_py'
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper) by extensions ['ignore', 'ignore_ament_install']
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper) by extension 'ignore'
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper) by extension 'ignore_ament_install'
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper) by extensions ['colcon_pkg']
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper) by extension 'colcon_pkg'
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper) by extensions ['colcon_meta']
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper) by extension 'colcon_meta'
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper) by extensions ['ros']
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper) by extension 'ros'
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper) by extensions ['cmake', 'python']
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper) by extension 'cmake'
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper) by extension 'python'
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper) by extensions ['python_setup_py']
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper) by extension 'python_setup_py'
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_controllers) by extensions ['ignore', 'ignore_ament_install']
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_controllers) by extension 'ignore'
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_controllers) by extension 'ignore_ament_install'
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_controllers) by extensions ['colcon_pkg']
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_controllers) by extension 'colcon_pkg'
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_controllers) by extensions ['colcon_meta']
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_controllers) by extension 'colcon_meta'
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_controllers) by extensions ['ros']
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_controllers) by extension 'ros'
+[0.731s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_robotiq_gripper/robotiq_controllers' with type 'ros.ament_cmake' and name 'robotiq_controllers'
+[0.732s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_description) by extensions ['ignore', 'ignore_ament_install']
+[0.732s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_description) by extension 'ignore'
+[0.732s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_description) by extension 'ignore_ament_install'
+[0.732s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_description) by extensions ['colcon_pkg']
+[0.732s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_description) by extension 'colcon_pkg'
+[0.732s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_description) by extensions ['colcon_meta']
+[0.732s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_description) by extension 'colcon_meta'
+[0.732s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_description) by extensions ['ros']
+[0.732s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_description) by extension 'ros'
+[0.733s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_robotiq_gripper/robotiq_description' with type 'ros.ament_cmake' and name 'robotiq_description'
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_driver) by extensions ['ignore', 'ignore_ament_install']
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_driver) by extension 'ignore'
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_driver) by extension 'ignore_ament_install'
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_driver) by extensions ['colcon_pkg']
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_driver) by extension 'colcon_pkg'
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_driver) by extensions ['colcon_meta']
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_driver) by extension 'colcon_meta'
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_driver) by extensions ['ros']
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_driver) by extension 'ros'
+[0.734s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_robotiq_gripper/robotiq_driver' with type 'ros.ament_cmake' and name 'robotiq_driver'
+[0.734s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_hardware_tests) by extensions ['ignore', 'ignore_ament_install']
+[0.734s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_hardware_tests) by extension 'ignore'
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_hardware_tests) by extension 'ignore_ament_install'
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_hardware_tests) by extensions ['colcon_pkg']
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_hardware_tests) by extension 'colcon_pkg'
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_hardware_tests) by extensions ['colcon_meta']
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_hardware_tests) by extension 'colcon_meta'
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_hardware_tests) by extensions ['ros']
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_robotiq_gripper/robotiq_hardware_tests) by extension 'ros'
+[0.736s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_robotiq_gripper/robotiq_hardware_tests' with type 'ros.ament_cmake' and name 'robotiq_hardware_tests'
+[0.736s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.736s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.736s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.736s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.736s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.773s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'robotiq_controllers' in 'src/ros2_robotiq_gripper/robotiq_controllers'
+[0.773s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'robotiq_driver' in 'src/ros2_robotiq_gripper/robotiq_driver'
+[0.773s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'robotiq_hardware_tests' in 'src/ros2_robotiq_gripper/robotiq_hardware_tests'
+[0.773s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'kinova_gen3_6dof_robotiq_2f_85_moveit_config' in 'src/ros2_kortex/kortex_moveit_config/kinova_gen3_6dof_robotiq_2f_85_moveit_config'
+[0.773s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'kinova_gen3_7dof_robotiq_2f_85_moveit_config' in 'src/ros2_kortex/kortex_moveit_config/kinova_gen3_7dof_robotiq_2f_85_moveit_config'
+[0.773s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'kinova_gen3_lite_moveit_config' in 'src/ros2_kortex/kortex_moveit_config/kinova_gen3_lite_moveit_config'
+[0.773s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.773s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.779s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 326 installed packages in /opt/ros/humble
+[0.793s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'robotiq_description' build argument 'cmake_args' from command line to 'None'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'robotiq_description' build argument 'cmake_target' from command line to 'None'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'robotiq_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'robotiq_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'robotiq_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'robotiq_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'robotiq_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'robotiq_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'robotiq_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.840s] DEBUG:colcon.colcon_core.verb:Building package 'robotiq_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/common/build/robotiq_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/common/install/robotiq_description', 'merge_install': False, 'path': '/home/common/src/ros2_robotiq_gripper/robotiq_description', 'symlink_install': False, 'test_result_base': None}
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'kortex_description' build argument 'cmake_args' from command line to 'None'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'kortex_description' build argument 'cmake_target' from command line to 'None'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'kortex_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'kortex_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.841s] Level 5:colcon.colcon_core.verb:set package 'kortex_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.841s] Level 5:colcon.colcon_core.verb:set package 'kortex_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.841s] Level 5:colcon.colcon_core.verb:set package 'kortex_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.841s] Level 5:colcon.colcon_core.verb:set package 'kortex_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.841s] Level 5:colcon.colcon_core.verb:set package 'kortex_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.841s] DEBUG:colcon.colcon_core.verb:Building package 'kortex_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/common/build/kortex_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/common/install/kortex_description', 'merge_install': False, 'path': '/home/common/src/ros2_kortex/kortex_description', 'symlink_install': False, 'test_result_base': None}
+[0.841s] Level 5:colcon.colcon_core.verb:set package 'kortex_bringup' build argument 'cmake_args' from command line to 'None'
+[0.841s] Level 5:colcon.colcon_core.verb:set package 'kortex_bringup' build argument 'cmake_target' from command line to 'None'
+[0.841s] Level 5:colcon.colcon_core.verb:set package 'kortex_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.841s] Level 5:colcon.colcon_core.verb:set package 'kortex_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[0.841s] Level 5:colcon.colcon_core.verb:set package 'kortex_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[0.841s] Level 5:colcon.colcon_core.verb:set package 'kortex_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[0.841s] Level 5:colcon.colcon_core.verb:set package 'kortex_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[0.841s] Level 5:colcon.colcon_core.verb:set package 'kortex_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[0.841s] Level 5:colcon.colcon_core.verb:set package 'kortex_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.841s] DEBUG:colcon.colcon_core.verb:Building package 'kortex_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/common/build/kortex_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/common/install/kortex_bringup', 'merge_install': False, 'path': '/home/common/src/ros2_kortex/kortex_bringup', 'symlink_install': False, 'test_result_base': None}
+[0.841s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.843s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.843s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/common/src/ros2_robotiq_gripper/robotiq_description' with build type 'ament_cmake'
+[0.843s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/common/src/ros2_robotiq_gripper/robotiq_description'
+[0.850s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.850s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.850s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.861s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/common/build/robotiq_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/common/src/ros2_robotiq_gripper/robotiq_description -DCMAKE_INSTALL_PREFIX=/home/common/install/robotiq_description
+[1.860s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/common/build/robotiq_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/common/src/ros2_robotiq_gripper/robotiq_description -DCMAKE_INSTALL_PREFIX=/home/common/install/robotiq_description
+[1.861s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/common/build/robotiq_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/common/build/robotiq_description -- -j2 -l2
+[1.917s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/common/build/robotiq_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/common/build/robotiq_description -- -j2 -l2
+[1.963s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/common/build/robotiq_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/common/build/robotiq_description
+[1.997s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robotiq_description)
+[1.998s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/common/build/robotiq_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/common/build/robotiq_description
+[2.007s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/robotiq_description' for CMake module files
+[2.007s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/robotiq_description' for CMake config files
+[2.007s] Level 1:colcon.colcon_core.shell:create_environment_hook('robotiq_description', 'cmake_prefix_path')
+[2.008s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/common/install/robotiq_description/share/robotiq_description/hook/cmake_prefix_path.ps1'
+[2.009s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/common/install/robotiq_description/share/robotiq_description/hook/cmake_prefix_path.dsv'
+[2.009s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/common/install/robotiq_description/share/robotiq_description/hook/cmake_prefix_path.sh'
+[2.011s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/robotiq_description/bin'
+[2.011s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/robotiq_description/lib/pkgconfig/robotiq_description.pc'
+[2.011s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/robotiq_description/lib/python3.10/site-packages'
+[2.011s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/robotiq_description/bin'
+[2.011s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/robotiq_description/share/robotiq_description/package.ps1'
+[2.012s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/common/install/robotiq_description/share/robotiq_description/package.dsv'
+[2.013s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/robotiq_description/share/robotiq_description/package.sh'
+[2.014s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/robotiq_description/share/robotiq_description/package.bash'
+[2.015s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/robotiq_description/share/robotiq_description/package.zsh'
+[2.017s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/common/install/robotiq_description/share/colcon-core/packages/robotiq_description)
+[2.050s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robotiq_description)
+[2.051s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/robotiq_description' for CMake module files
+[2.051s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/robotiq_description' for CMake config files
+[2.051s] Level 1:colcon.colcon_core.shell:create_environment_hook('robotiq_description', 'cmake_prefix_path')
+[2.052s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/common/install/robotiq_description/share/robotiq_description/hook/cmake_prefix_path.ps1'
+[2.052s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/common/install/robotiq_description/share/robotiq_description/hook/cmake_prefix_path.dsv'
+[2.053s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/common/install/robotiq_description/share/robotiq_description/hook/cmake_prefix_path.sh'
+[2.053s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/robotiq_description/bin'
+[2.053s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/robotiq_description/lib/pkgconfig/robotiq_description.pc'
+[2.054s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/robotiq_description/lib/python3.10/site-packages'
+[2.054s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/robotiq_description/bin'
+[2.054s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/robotiq_description/share/robotiq_description/package.ps1'
+[2.055s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/common/install/robotiq_description/share/robotiq_description/package.dsv'
+[2.055s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/robotiq_description/share/robotiq_description/package.sh'
+[2.056s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/robotiq_description/share/robotiq_description/package.bash'
+[2.056s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/robotiq_description/share/robotiq_description/package.zsh'
+[2.057s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/common/install/robotiq_description/share/colcon-core/packages/robotiq_description)
+[2.057s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/common/src/ros2_kortex/kortex_description' with build type 'ament_cmake'
+[2.057s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/common/src/ros2_kortex/kortex_description'
+[2.058s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.058s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.067s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/common/build/kortex_description': AMENT_PREFIX_PATH=/home/common/install/robotiq_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/common/install/robotiq_description:/opt/ros/humble /usr/bin/cmake /home/common/src/ros2_kortex/kortex_description -DCMAKE_INSTALL_PREFIX=/home/common/install/kortex_description
+[2.832s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/common/build/kortex_description' returned '0': AMENT_PREFIX_PATH=/home/common/install/robotiq_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/common/install/robotiq_description:/opt/ros/humble /usr/bin/cmake /home/common/src/ros2_kortex/kortex_description -DCMAKE_INSTALL_PREFIX=/home/common/install/kortex_description
+[2.835s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/common/build/kortex_description': AMENT_PREFIX_PATH=/home/common/install/robotiq_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/common/install/robotiq_description:/opt/ros/humble /usr/bin/cmake --build /home/common/build/kortex_description -- -j2 -l2
+[2.889s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/common/build/kortex_description' returned '0': AMENT_PREFIX_PATH=/home/common/install/robotiq_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/common/install/robotiq_description:/opt/ros/humble /usr/bin/cmake --build /home/common/build/kortex_description -- -j2 -l2
+[2.923s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/common/build/kortex_description': AMENT_PREFIX_PATH=/home/common/install/robotiq_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/common/install/robotiq_description:/opt/ros/humble /usr/bin/cmake --install /home/common/build/kortex_description
+[3.006s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(kortex_description)
+[3.007s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_description' for CMake module files
+[3.008s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/common/build/kortex_description' returned '0': AMENT_PREFIX_PATH=/home/common/install/robotiq_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/common/install/robotiq_description:/opt/ros/humble /usr/bin/cmake --install /home/common/build/kortex_description
+[3.008s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_description' for CMake config files
+[3.008s] Level 1:colcon.colcon_core.shell:create_environment_hook('kortex_description', 'cmake_prefix_path')
+[3.009s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/common/install/kortex_description/share/kortex_description/hook/cmake_prefix_path.ps1'
+[3.009s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/common/install/kortex_description/share/kortex_description/hook/cmake_prefix_path.dsv'
+[3.010s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/common/install/kortex_description/share/kortex_description/hook/cmake_prefix_path.sh'
+[3.010s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_description/bin'
+[3.010s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_description/lib/pkgconfig/kortex_description.pc'
+[3.010s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_description/lib/python3.10/site-packages'
+[3.011s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_description/bin'
+[3.011s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/kortex_description/share/kortex_description/package.ps1'
+[3.011s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/common/install/kortex_description/share/kortex_description/package.dsv'
+[3.012s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/kortex_description/share/kortex_description/package.sh'
+[3.012s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/kortex_description/share/kortex_description/package.bash'
+[3.012s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/kortex_description/share/kortex_description/package.zsh'
+[3.013s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/common/install/kortex_description/share/colcon-core/packages/kortex_description)
+[3.051s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(kortex_description)
+[3.051s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_description' for CMake module files
+[3.052s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_description' for CMake config files
+[3.052s] Level 1:colcon.colcon_core.shell:create_environment_hook('kortex_description', 'cmake_prefix_path')
+[3.053s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/common/install/kortex_description/share/kortex_description/hook/cmake_prefix_path.ps1'
+[3.054s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/common/install/kortex_description/share/kortex_description/hook/cmake_prefix_path.dsv'
+[3.055s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/common/install/kortex_description/share/kortex_description/hook/cmake_prefix_path.sh'
+[3.055s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_description/bin'
+[3.056s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_description/lib/pkgconfig/kortex_description.pc'
+[3.056s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_description/lib/python3.10/site-packages'
+[3.056s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_description/bin'
+[3.056s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/kortex_description/share/kortex_description/package.ps1'
+[3.057s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/common/install/kortex_description/share/kortex_description/package.dsv'
+[3.057s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/kortex_description/share/kortex_description/package.sh'
+[3.058s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/kortex_description/share/kortex_description/package.bash'
+[3.058s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/kortex_description/share/kortex_description/package.zsh'
+[3.059s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/common/install/kortex_description/share/colcon-core/packages/kortex_description)
+[3.059s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/common/src/ros2_kortex/kortex_bringup' with build type 'ament_cmake'
+[3.060s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/common/src/ros2_kortex/kortex_bringup'
+[3.060s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.060s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.069s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/common/build/kortex_bringup': AMENT_PREFIX_PATH=/home/common/install/kortex_description:/home/common/install/robotiq_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/common/install/kortex_description:/home/common/install/robotiq_description:/opt/ros/humble /usr/bin/cmake /home/common/src/ros2_kortex/kortex_bringup -DCMAKE_INSTALL_PREFIX=/home/common/install/kortex_bringup
+[3.819s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/common/build/kortex_bringup' returned '0': AMENT_PREFIX_PATH=/home/common/install/kortex_description:/home/common/install/robotiq_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/common/install/kortex_description:/home/common/install/robotiq_description:/opt/ros/humble /usr/bin/cmake /home/common/src/ros2_kortex/kortex_bringup -DCMAKE_INSTALL_PREFIX=/home/common/install/kortex_bringup
+[3.822s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/common/build/kortex_bringup': AMENT_PREFIX_PATH=/home/common/install/kortex_description:/home/common/install/robotiq_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/common/install/kortex_description:/home/common/install/robotiq_description:/opt/ros/humble /usr/bin/cmake --build /home/common/build/kortex_bringup -- -j2 -l2
+[3.872s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/common/build/kortex_bringup' returned '0': AMENT_PREFIX_PATH=/home/common/install/kortex_description:/home/common/install/robotiq_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/common/install/kortex_description:/home/common/install/robotiq_description:/opt/ros/humble /usr/bin/cmake --build /home/common/build/kortex_bringup -- -j2 -l2
+[3.908s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/common/build/kortex_bringup': AMENT_PREFIX_PATH=/home/common/install/kortex_description:/home/common/install/robotiq_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/common/install/kortex_description:/home/common/install/robotiq_description:/opt/ros/humble /usr/bin/cmake --install /home/common/build/kortex_bringup
+[3.926s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(kortex_bringup)
+[3.926s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_bringup' for CMake module files
+[3.927s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/common/build/kortex_bringup' returned '0': AMENT_PREFIX_PATH=/home/common/install/kortex_description:/home/common/install/robotiq_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/common/install/kortex_description:/home/common/install/robotiq_description:/opt/ros/humble /usr/bin/cmake --install /home/common/build/kortex_bringup
+[3.928s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_bringup' for CMake config files
+[3.928s] Level 1:colcon.colcon_core.shell:create_environment_hook('kortex_bringup', 'cmake_prefix_path')
+[3.928s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/common/install/kortex_bringup/share/kortex_bringup/hook/cmake_prefix_path.ps1'
+[3.929s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/common/install/kortex_bringup/share/kortex_bringup/hook/cmake_prefix_path.dsv'
+[3.929s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/common/install/kortex_bringup/share/kortex_bringup/hook/cmake_prefix_path.sh'
+[3.930s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_bringup/lib'
+[3.930s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_bringup/bin'
+[3.930s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_bringup/lib/pkgconfig/kortex_bringup.pc'
+[3.930s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_bringup/lib/python3.10/site-packages'
+[3.930s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_bringup/bin'
+[3.931s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/kortex_bringup/share/kortex_bringup/package.ps1'
+[3.931s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/common/install/kortex_bringup/share/kortex_bringup/package.dsv'
+[3.932s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/kortex_bringup/share/kortex_bringup/package.sh'
+[3.932s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/kortex_bringup/share/kortex_bringup/package.bash'
+[3.932s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/kortex_bringup/share/kortex_bringup/package.zsh'
+[3.932s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/common/install/kortex_bringup/share/colcon-core/packages/kortex_bringup)
+[3.963s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(kortex_bringup)
+[3.963s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_bringup' for CMake module files
+[3.964s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_bringup' for CMake config files
+[3.964s] Level 1:colcon.colcon_core.shell:create_environment_hook('kortex_bringup', 'cmake_prefix_path')
+[3.964s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/common/install/kortex_bringup/share/kortex_bringup/hook/cmake_prefix_path.ps1'
+[3.964s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/common/install/kortex_bringup/share/kortex_bringup/hook/cmake_prefix_path.dsv'
+[3.965s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/common/install/kortex_bringup/share/kortex_bringup/hook/cmake_prefix_path.sh'
+[3.965s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_bringup/lib'
+[3.966s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_bringup/bin'
+[3.966s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_bringup/lib/pkgconfig/kortex_bringup.pc'
+[3.966s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_bringup/lib/python3.10/site-packages'
+[3.966s] Level 1:colcon.colcon_core.environment:checking '/home/common/install/kortex_bringup/bin'
+[3.966s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/kortex_bringup/share/kortex_bringup/package.ps1'
+[3.967s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/common/install/kortex_bringup/share/kortex_bringup/package.dsv'
+[3.967s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/kortex_bringup/share/kortex_bringup/package.sh'
+[3.968s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/kortex_bringup/share/kortex_bringup/package.bash'
+[3.968s] INFO:colcon.colcon_core.shell:Creating package script '/home/common/install/kortex_bringup/share/kortex_bringup/package.zsh'
+[3.969s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/common/install/kortex_bringup/share/colcon-core/packages/kortex_bringup)
+[3.969s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[3.969s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[3.969s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[3.970s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[3.978s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[3.978s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[3.978s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[4.007s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[4.008s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/common/install/local_setup.ps1'
+[4.009s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/common/install/_local_setup_util_ps1.py'
+[4.011s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/common/install/setup.ps1'
+[4.013s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/common/install/local_setup.sh'
+[4.014s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/common/install/_local_setup_util_sh.py'
+[4.015s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/common/install/setup.sh'
+[4.016s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/common/install/local_setup.bash'
+[4.019s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/common/install/setup.bash'
+[4.020s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/common/install/local_setup.zsh'
+[4.020s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/common/install/setup.zsh'

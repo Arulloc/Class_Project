@@ -1,0 +1,6 @@
+Invoking command in '/home/common/build/robotiq_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/common/src/ros2_robotiq_gripper/robotiq_description -DCMAKE_INSTALL_PREFIX=/home/common/install/robotiq_description
+Invoked command in '/home/common/build/robotiq_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/common/src/ros2_robotiq_gripper/robotiq_description -DCMAKE_INSTALL_PREFIX=/home/common/install/robotiq_description
+Invoking command in '/home/common/build/robotiq_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/common/build/robotiq_description -- -j2 -l2
+Invoked command in '/home/common/build/robotiq_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/common/build/robotiq_description -- -j2 -l2
+Invoking command in '/home/common/build/robotiq_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/common/build/robotiq_description
+Invoked command in '/home/common/build/robotiq_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/common/build/robotiq_description

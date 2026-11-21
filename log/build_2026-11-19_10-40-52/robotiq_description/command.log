@@ -1,0 +1,2 @@
+Invoking command in '/home/common/class_project/build/robotiq_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/common/class_project/build/robotiq_description -- -j2 -l2
+Invoked command in '/home/common/class_project/build/robotiq_description' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/common/class_project/build/robotiq_description -- -j2 -l2

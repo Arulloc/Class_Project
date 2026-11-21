@@ -1,0 +1,1 @@
+Invoking command in '/home/common/class_project/build/kortex_api': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/common/class_project/src/ros2_kortex/kortex_api -DCMAKE_INSTALL_PREFIX=/home/common/class_project/install/kortex_api

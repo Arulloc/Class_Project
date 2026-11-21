@@ -1,0 +1,2 @@
+Invoking command in '/home/common/class_project/build/kortex_api': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/common/class_project/build/kortex_api -- -j2 -l2
+Invoked command in '/home/common/class_project/build/kortex_api' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/common/class_project/build/kortex_api -- -j2 -l2
