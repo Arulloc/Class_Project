@@ -14,6 +14,7 @@
 #
 # Author: Marq Rasmussen
 
+import os
 from launch import LaunchDescription
 from launch.actions import (
     DeclareLaunchArgument,
@@ -188,7 +189,7 @@ def launch_setup(context, *args, **kwargs):
 
     # Gazebo nodes
     gzserver = ExecuteProcess(
-        cmd=["gzserver", "-s", "libgazebo_ros_init.so", "-s", "libgazebo_ros_factory.so", "/home/common/class_project/worlds/lab.world"],
+        cmd=["gzserver", "-s", "libgazebo_ros_init.so", "-s", "libgazebo_ros_factory.so", os.path.expanduser("~/class_project/worlds/lab.world")],
         output="screen",
         condition=IfCondition(sim_gazebo),
     )
