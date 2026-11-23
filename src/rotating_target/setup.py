@@ -25,6 +25,7 @@ setup(
     entry_points={
         'console_scripts': [
             'target_motion = rotating_target.target_motion:main',
+            'predictor = rotating_target.predictor:main',
         ],
     },
 )
