@@ -1,4 +1,4 @@
-""Predict where the rotating handle will be.
+"""Predict where the rotating handle will be.
 
 Reads the handle position on /target/handle_true (later: from the camera),
 turns it into an angle around the turntable centre, estimates how fast
