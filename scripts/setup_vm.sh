@@ -1,3 +1,4 @@
+#!/bin/bash
 # setup_vm.sh: sets up the Kinova Gen3 simulation on an EECS 4421 VM.
 # Run from anywhere:  ~/class_project/scripts/setup_vm.sh
 # Asks for the sudo password once. Safe to run again.

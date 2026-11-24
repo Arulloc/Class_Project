@@ -1,10 +1,6 @@
-# Made by colcon build
 build/
 install/
 log/
-
-pinned versions
+launch.log
 src/ros2_kortex/
 src/ros2_robotiq_gripper/
-
-__pycache__/
