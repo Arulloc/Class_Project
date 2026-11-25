@@ -17,6 +17,7 @@
 cd "$(dirname "$0")/.."
 source install/setup.bash
 OUT="$(pwd)/results/stageA"
+export PYTHONUNBUFFERED=1   # write node messages to the logs straight away
 mkdir -p "$OUT"
 
 METHODS="reactive last_two average kalman"
@@ -81,7 +82,10 @@ for cond in "${CONDITIONS[@]}"; do
   ros2 launch rotating_target target.launch.py mode:=spin spin_period:="$PERIOD" \
     > "$OUT/target_$TAG.log" 2>&1 &
   TARGET_PID=$!
-  if ! timeout 60 ros2 topic echo /target/handle_true --once > /dev/null 2>&1; then
+  # Wait for the first handle message. The message type is given so the
+  # command waits for the topic to appear instead of giving up at once.
+  if ! timeout 90 ros2 topic echo /target/handle_true \
+       geometry_msgs/msg/PoseStamped --once > /dev/null 2>&1; then
     echo "  target did not start; see $OUT/target_$TAG.log"
     kill -TERM $TARGET_PID 2>/dev/null; wait $TARGET_PID 2>/dev/null
     continue
