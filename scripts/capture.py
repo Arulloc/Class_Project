@@ -29,6 +29,7 @@ Run (Gazebo + arm already running, target spinning, predictor running):
 import csv
 import math
 import os
+import time
 import xml.etree.ElementTree as ET
 
 import numpy as np
@@ -372,11 +373,12 @@ class Capture(Node):
         if self.phase == 'setup':
             self.setup(now)
         elif self.phase == 'to_hover':
-            # Wait until the arm has really arrived (all joints within 0.03 rad)
-            if now - self.t_phase < self.t_to_hover:
-                return
+            # Wait until the arm has really arrived (all joints within 0.03 rad).
+            # The time-out uses the computer's clock: the simulation clock
+            # jumps forward after the slow pose search, because its updates
+            # queue up while the search runs.
             if not self.at_hover():
-                if now - self.t_phase > self.t_to_hover + 10.0:
+                if time.monotonic() - self.wall_start > self.t_to_hover + 20.0:
                     self.get_logger().error(
                         'The arm did not reach the hover pose. Is the joint '
                         'trajectory controller active? (ros2 control list_controllers)')
@@ -449,8 +451,8 @@ class Capture(Node):
         self.t_to_hover = max(3.0, float(np.max(np.abs(self.q_hover - self.q_now))) / 0.5)
         self.get_logger().info(f'Moving to hover over {self.t_to_hover:.1f} s')
         self.send([(self.q_hover, self.t_to_hover)])
-        now = self.now()   # the pose search above takes several seconds
-        self.phase, self.t_phase = 'to_hover', now
+        self.wall_start = time.monotonic()
+        self.phase = 'to_hover'
 
     def at_hover(self):
         return (self.q_now is not None
