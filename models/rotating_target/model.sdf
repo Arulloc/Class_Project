@@ -19,6 +19,14 @@
         <geometry>
           <box><size>0.10 0.10 0.10</size></box>
         </geometry>
+        <!-- Collide with nothing: the cube is teleported every update, so any
+             contact would push the arm with unlimited force and break it.
+             Capture is judged from measured positions, not contact. -->
+        <surface>
+          <contact>
+            <collide_bitmask>0x0</collide_bitmask>
+          </contact>
+        </surface>
       </collision>
 
       <!-- Upper arm of the loop handle -->
