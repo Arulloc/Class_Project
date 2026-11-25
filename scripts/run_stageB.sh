@@ -12,10 +12,19 @@
 #
 # Usage:  bash scripts/run_stageB.sh          full set (about 25-30 minutes)
 #         bash scripts/run_stageB.sh test     10 s spin, reactive + kalman, 3 tries each
+#         NOISE=0.005 bash scripts/run_stageB.sh
+#             same, but the predictor sees positions with 5 mm of noise
+#             (imitating a camera); results go to results/stageB_noise5mm/
 
 cd "$(dirname "$0")/.."
 source install/setup.bash
-OUT="$(pwd)/results/stageB"
+NOISE=${NOISE:-0}
+F_NOISE=$(python3 -c "print(float($NOISE))")
+if [ "$F_NOISE" = "0.0" ]; then
+  OUT="$(pwd)/results/stageB"
+else
+  OUT="$(pwd)/results/stageB_noise$(python3 -c "print(f'{$NOISE*1000:g}')")mm"
+fi
 mkdir -p "$OUT"
 export PYTHONUNBUFFERED=1
 
@@ -31,7 +40,7 @@ fi
   echo "branch: $(git branch --show-current)"
   echo "commit: $(git rev-parse --short HEAD)"
   echo "uncommitted changes: $(git status --porcelain | wc -l) files"
-  echo "methods: $METHODS   periods: $PERIODS   trials: $TRIALS"
+  echo "methods: $METHODS   periods: $PERIODS   trials: $TRIALS   noise: $F_NOISE m"
 } > "$OUT/run_info.txt"
 
 stop_all() {
@@ -71,12 +80,14 @@ for PERIOD in $PERIODS; do
   for M in $METHODS; do
     TAG="P${PERIOD}_${M}"
     ros2 run rotating_target predictor --ros-args -p method:=$M \
-      -p spin_period:=$F_PERIOD > "$OUT/predictor_${TAG}.log" 2>&1 &
+      -p spin_period:=$F_PERIOD -p noise_std:=$F_NOISE \
+      > "$OUT/predictor_${TAG}.log" 2>&1 &
     sleep 3
     # Generous time limit: 10 tries at a 20 s spin take about 4 minutes
     timeout 900 python3 scripts/capture.py --ros-args -p use_sim_time:=true \
       -p method:=$M -p spin_period:=$F_PERIOD -p trials:=$TRIALS \
       -p log_file:="$OUT/stageB_${TAG}.csv" > "$OUT/capture_${TAG}.log" 2>&1
+    STATUS=$?
     pkill -f "rotating_target/predictor" > /dev/null 2>&1
     F="$OUT/stageB_${TAG}.csv"
     if [ -f "$F" ] && [ "$(wc -l < "$F")" -gt 1 ]; then
@@ -85,6 +96,11 @@ for PERIOD in $PERIODS; do
       echo "  $M: captured $OK of $N"
     else
       echo "  $M: no results; see $OUT/capture_${TAG}.log"
+    fi
+    if [ "$STATUS" = "2" ]; then
+      echo "  STOPPED: the arm was knocked out of position during $M at ${PERIOD} s."
+      echo "  See $OUT/capture_${TAG}.log. Restart Gazebo before running again."
+      kill -TERM $TARGET_PID 2>/dev/null; stop_all; remove_target; exit 1
     fi
     sleep 2
   done
