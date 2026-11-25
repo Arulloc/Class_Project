@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """capture.py: Stage B - try to catch the spinning handle with the arm.
 
-How one trial works
+How one trial works:
   1. The arm waits at a fixed HOVER pose, 10 cm above a fixed MEETING POINT on
      the handle's circle (the point nearest the arm), gripper pointing down
      with its fingers opening along the handle's direction of travel.
@@ -97,9 +97,12 @@ class Chain:
             lo = hi = None
             if j.get('type') == 'revolute' and lim is not None:
                 lo, hi = float(lim.get('lower')), float(lim.get('upper'))
+            axis = np.array(axis)
+            if np.linalg.norm(axis) > 0:          # fixed joints have no axis
+                axis = axis / np.linalg.norm(axis)
             steps.append(dict(name=j.get('name'), type=j.get('type'),
                               origin=transform(rot_rpy(*rpy), xyz),
-                              axis=np.array(axis) / np.linalg.norm(axis),
+                              axis=axis,
                               lo=lo, hi=hi))
             link = j.find('parent').get('link')
         self.steps = list(reversed(steps))
@@ -369,7 +372,18 @@ class Capture(Node):
         if self.phase == 'setup':
             self.setup(now)
         elif self.phase == 'to_hover':
-            if now - self.t_phase > self.t_to_hover + 1.0:
+            # Wait until the arm has really arrived (all joints within 0.03 rad)
+            if now - self.t_phase < self.t_to_hover:
+                return
+            if not self.at_hover():
+                if now - self.t_phase > self.t_to_hover + 10.0:
+                    self.get_logger().error(
+                        'The arm did not reach the hover pose. Is the joint '
+                        'trajectory controller active? (ros2 control list_controllers)')
+                    self.done = True
+                return
+            self.get_logger().info('Arm is at the hover pose.')
+            if True:
                 self.phase = 'wait'
                 self.prev_gap = None
                 self.get_logger().info(
@@ -380,7 +394,7 @@ class Capture(Node):
             if now > self.t_meet + self.hold + 0.3:
                 self.measure()
         elif self.phase == 'rising':
-            if now - self.t_phase > 1.5:
+            if now - self.t_phase > 1.5 and self.at_hover():
                 self.trial += 1
                 if self.trial >= self.trials:
                     self.get_logger().info('All trials done.')
@@ -435,11 +449,16 @@ class Capture(Node):
         self.t_to_hover = max(3.0, float(np.max(np.abs(self.q_hover - self.q_now))) / 0.5)
         self.get_logger().info(f'Moving to hover over {self.t_to_hover:.1f} s')
         self.send([(self.q_hover, self.t_to_hover)])
+        now = self.now()   # the pose search above takes several seconds
         self.phase, self.t_phase = 'to_hover', now
+
+    def at_hover(self):
+        return (self.q_now is not None
+                and float(np.max(np.abs(self.q_now - self.q_hover))) < 0.03)
 
     def try_commit(self, now):
         """Decide whether to start the descent now (scheduled start time)."""
-        if self.state is None:
+        if self.state is None or not self.at_hover():
             return
         t_k, theta, omega, _ = self.state
         gap = (self.theta_m - theta) % TWO_PI     # angle still to travel
