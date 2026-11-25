@@ -118,6 +118,17 @@ class Chain:
                 i += 1
         return T
 
+    def joint_points(self, q):
+        """Positions of every joint along the arm, base first (for ground checks)."""
+        T, i, pts = np.eye(4), 0, []
+        for s in self.steps:
+            T = T @ s['origin']
+            if s['type'] != 'fixed':
+                T = T @ transform(rot_axis(s['axis'], q[i]), [0, 0, 0])
+                i += 1
+            pts.append(T[:3, 3].copy())
+        return pts
+
     def limits(self):
         return [(s['lo'], s['hi']) for s in self.steps if s['type'] != 'fixed']
 
@@ -135,9 +146,11 @@ def pose_error(T, T_goal):
     return np.concatenate([dp, dr])
 
 
-def solve_ik(chain, T_goal, seeds, iters=300):
+def solve_ik(chain, T_goal, seeds, ok=None, iters=300):
     """Damped least squares from several starting guesses. Returns the joint
-    angles closest to the first seed among those that reach the goal."""
+    angles closest to the first seed among those that reach the goal and pass
+    the safety check ok(q). Joints that can turn forever are brought to
+    within half a turn of the first seed, so the arm never spins extra turns."""
     lims = chain.limits()
     best = None
     for seed in seeds:
@@ -158,6 +171,11 @@ def solve_ik(chain, T_goal, seeds, iters=300):
                 if lo is not None:
                     q[k] = min(max(q[k], lo), hi)
         e = pose_error(chain.fk(q), T_goal)
+        for k, (lo, hi) in enumerate(lims):
+            if lo is None:
+                q[k] = seeds[0][k] + wrap(q[k] - seeds[0][k])
+        if ok is not None and not ok(q):
+            continue
         if np.linalg.norm(e[:3]) < 1e-4 and np.linalg.norm(e[3:]) < 1e-3:
             dist = np.linalg.norm(q - np.array(seeds[0]))
             if best is None or dist < best[0]:
@@ -300,6 +318,16 @@ class Capture(Node):
         T = self.chain.fk(q)
         return T[:3, 3] + self.tcp * T[:3, 2]
 
+    def safe(self, q):
+        """True if every joint past the shoulder and the grasp point stay at
+        least 5 cm above the ground."""
+        pts = self.chain.joint_points(q)[2:]
+        return (min(p[2] for p in pts) >= 0.05
+                and self.grasp_point(q)[2] >= 0.05)
+
+    def path_safe(self, q_a, q_b):
+        return all(self.safe(q_a + s * (q_b - q_a)) for s in np.linspace(0, 1, 21))
+
     def goal_for(self, p):
         """End-effector pose that puts the grasp point at p."""
         return transform(self.R_goal, p - self.tcp * self.R_goal[:, 2])
@@ -341,7 +369,7 @@ class Capture(Node):
         if self.phase == 'setup':
             self.setup(now)
         elif self.phase == 'to_hover':
-            if now - self.t_phase > 4.0:
+            if now - self.t_phase > self.t_to_hover + 1.0:
                 self.phase = 'wait'
                 self.prev_gap = None
                 self.get_logger().info(
@@ -376,15 +404,18 @@ class Capture(Node):
         rng = np.random.default_rng(0)
         for _ in range(20):
             seeds.append(rng.uniform(-2.0, 2.0, 6))
-        self.q_hover = solve_ik(self.chain, self.goal_for(hover), seeds)
+        self.get_logger().info(f'Arm now at joints {np.round(self.q_now, 3)}; '
+                               'working out the hover and grasp poses...')
+        self.q_hover = solve_ik(self.chain, self.goal_for(hover), seeds,
+                                ok=self.safe)
         if self.q_hover is None:
-            self.get_logger().error('No IK solution for the hover pose.')
+            self.get_logger().error('No safe IK solution for the hover pose.')
             self.done = True
             return
         self.q_grasp = solve_ik(self.chain, self.goal_for(self.meet),
-                                [self.q_hover] + seeds)
+                                [self.q_hover] + seeds, ok=self.safe)
         if self.q_grasp is None:
-            self.get_logger().error('No IK solution for the grasp pose.')
+            self.get_logger().error('No safe IK solution for the grasp pose.')
             self.done = True
             return
         err_h = np.linalg.norm(self.grasp_point(self.q_hover) - hover)
@@ -394,7 +425,16 @@ class Capture(Node):
             f'{err_h * 1000:.2f} mm, grasp {err_g * 1000:.2f} mm off. '
             f'Hover joints {np.round(self.q_hover, 3)}; grasp joints '
             f'{np.round(self.q_grasp, 3)}')
-        self.send([(self.q_hover, 3.0)])
+        if not (self.path_safe(self.q_now, self.q_hover)
+                and self.path_safe(self.q_hover, self.q_grasp)):
+            self.get_logger().error(
+                'The move would take part of the arm below 5 cm; not moving.')
+            self.done = True
+            return
+        # Move slowly: at most 0.5 rad/s on any joint, and at least 3 s
+        self.t_to_hover = max(3.0, float(np.max(np.abs(self.q_hover - self.q_now))) / 0.5)
+        self.get_logger().info(f'Moving to hover over {self.t_to_hover:.1f} s')
+        self.send([(self.q_hover, self.t_to_hover)])
         self.phase, self.t_phase = 'to_hover', now
 
     def try_commit(self, now):
