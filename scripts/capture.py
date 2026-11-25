@@ -211,7 +211,7 @@ class Capture(Node):
         P('descent', 0.5)                # seconds from hover to grasp
         P('lead_min', 0.5)               # commit when arrival is between
         P('lead_max', 1.0)               #   descent+lead_min and descent+lead_max ahead
-        P('hold', 0.4)                   # stay down this long, then rise
+        P('rise', 0.8)                   # seconds from grasp back up to hover
         P('tcp_offset', 0.12)            # grasp point beyond end_effector_link (m)
         P('finger_axis', 'y')            # end-effector axis the fingers open along
         P('tolerance', 0.036)            # capture tolerance (m), report 6.2
@@ -224,7 +224,7 @@ class Capture(Node):
         self.theta_m = float(g('meet_angle'))
         self.descent = float(g('descent'))
         self.lead_min, self.lead_max = float(g('lead_min')), float(g('lead_max'))
-        self.hold = float(g('hold'))
+        self.rise = float(g('rise'))
         self.tcp = float(g('tcp_offset'))
         self.tol = float(g('tolerance'))
 
@@ -285,6 +285,7 @@ class Capture(Node):
                 'err_dist', 'success'])
         self.spin_period = float(g('spin_period'))
         self.done = False
+        self.broken = False
         self.create_timer(0.01, self.step)
 
     # ------------------------------------------------------------ inputs
@@ -393,7 +394,7 @@ class Capture(Node):
         elif self.phase == 'wait':
             self.try_commit(now)
         elif self.phase == 'descending':
-            if now > self.t_meet + self.hold + 0.3:
+            if now > self.t_meet + self.rise + 0.3:
                 self.measure()
         elif self.phase == 'rising':
             if now - self.t_phase > 1.5 and self.at_hover():
@@ -470,8 +471,10 @@ class Capture(Node):
             crossed = self.prev_gap is not None and gap > self.prev_gap + math.pi
             self.prev_gap = gap
             if crossed:
-                self.commit(now, now + self.descent, omega, self.descent,
-                            scheduled=False)
+                # Same command form as the predictive methods, starting
+                # 0.15 s from now (the time the controller needs to receive it)
+                self.commit(now, now + 0.15 + self.descent, omega,
+                            0.15 + self.descent)
             return
         if omega <= 1e-3:
             return
@@ -480,11 +483,14 @@ class Capture(Node):
         if self.descent + self.lead_min <= lead <= self.descent + self.lead_max:
             self.commit(now, t_meet, omega, lead)
 
-    def commit(self, now, t_meet, omega, lead, scheduled=True):
-        # Scheduled: the controller waits and starts the descent exactly at
-        # t_meet - descent. Reactive: start straight away.
-        start = t_meet - self.descent if scheduled else None
-        self.send([(self.q_hover, 0.0), (self.q_grasp, self.descent)], start=start)
+    def commit(self, now, t_meet, omega, lead):
+        # One command for the whole try: the controller waits until
+        # t_meet - descent, drops to the grasp pose by t_meet, then rises
+        # straight back to hover, so the gripper spends as little time as
+        # possible next to the spinning cube.
+        start = t_meet - self.descent
+        self.send([(self.q_hover, 0.0), (self.q_grasp, self.descent),
+                   (self.q_hover, self.descent + self.rise)], start=start)
         self.t_commit, self.t_meet = now, t_meet
         self.commit_info = (omega, lead)
         self.phase = 'descending'
@@ -516,7 +522,15 @@ class Capture(Node):
                     f'{omega:.4f}', f'{along:.5f}', f'{across:.5f}',
                     f'{vert:.5f}', f'{dist:.5f}', int(ok)])
                 self.log_fh.flush()
-        self.send([(self.q_hover, 1.0)])
+        if q is not None and h is not None and dist > 0.25:
+            # A miss this large means the arm itself went wrong (for example a
+            # physics blow-up in Gazebo), not the prediction. Stop the run.
+            self.get_logger().error(
+                'Error over 25 cm: the arm has probably been knocked out of '
+                'position. Stopping; restart Gazebo before running again.')
+            self.broken = True
+            self.done = True
+            return
         self.phase, self.t_phase = 'rising', self.now()
 
     def close(self):
@@ -534,9 +548,12 @@ def main(args=None):
         pass
     finally:
         node.close()
+        broken = node.broken
         node.destroy_node()
         if rclpy.ok():
             rclpy.shutdown()
+    if broken:
+        raise SystemExit(2)
 
 
 if __name__ == '__main__':
