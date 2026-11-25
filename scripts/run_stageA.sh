@@ -56,6 +56,14 @@ for cond in "${CONDITIONS[@]}"; do
   NOISE_MM=$(python3 -c "print(f'{$NOISE*1000:g}')")
   DELAY_MS=$(python3 -c "print(f'{$DELAY*1000:g}')")
   C=$([ "$COMP" = "true" ] && echo 1 || echo 0)
+  # ROS parameters are typed: the predictor declares these as decimals, so a
+  # whole number like "20" must be sent as "20.0" or the node refuses to start.
+  F_PERIOD=$(python3 -c "print(float($PERIOD))")
+  F_HORIZON=$(python3 -c "print(float($HORIZON))")
+  F_NOISE=$(python3 -c "print(float($NOISE))")
+  F_DELAY=$(python3 -c "print(float($DELAY))")
+  F_RUN=$(python3 -c "print(float($RUN_TIME))")
+  F_WARM=$(python3 -c "print(float($WARMUP))")
   TAG="P${PERIOD}_h${HORIZON%.0}_n${NOISE_MM}_d${DELAY_MS}_c${C}"
   echo "=== $TAG: spin ${PERIOD} s, ${HORIZON} s ahead, noise ${NOISE_MM} mm, delay ${DELAY_MS} ms, corrected $COMP"
 
@@ -77,9 +85,9 @@ for cond in "${CONDITIONS[@]}"; do
       -r __node:=predictor_$M \
       -r /target/handle_predicted:=/target/handle_predicted_$M \
       -r /target/prediction_error:=/target/prediction_error_$M \
-      -p method:=$M -p horizon:=$HORIZON -p noise_std:=$NOISE \
-      -p delay:=$DELAY -p compensate:=$COMP -p spin_period:=$PERIOD \
-      -p run_time:=$RUN_TIME -p warmup:=$WARMUP \
+      -p method:=$M -p horizon:=$F_HORIZON -p noise_std:=$F_NOISE \
+      -p delay:=$F_DELAY -p compensate:=$COMP -p spin_period:=$F_PERIOD \
+      -p run_time:=$F_RUN -p warmup:=$F_WARM \
       -p log_file:="$OUT/stageA_${TAG}_${M}.csv" \
       > "$OUT/predictor_${TAG}_${M}.log" 2>&1 &
     PIDS="$PIDS $!"
