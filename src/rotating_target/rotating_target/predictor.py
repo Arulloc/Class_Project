@@ -37,7 +37,7 @@ import random
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import PoseStamped
-from std_msgs.msg import Float64
+from std_msgs.msg import Float64, Float64MultiArray
 
 
 def wrap(a):
@@ -152,6 +152,10 @@ class Predictor(Node):
             PoseStamped, '/target/handle_predicted', 10)
         self.err_pub = self.create_publisher(
             Float64, '/target/prediction_error', 10)
+        # Current estimate for the capture program (Stage B):
+        # [measurement time, angle (rad, unwrapped), speed (rad/s), time now]
+        self.state_pub = self.create_publisher(
+            Float64MultiArray, '/target/handle_state', 10)
 
         self.get_logger().info(
             f'Predictor: method={self.method}, horizon={self.horizon} s, '
@@ -215,6 +219,8 @@ class Predictor(Node):
         theta_future = theta_meas + omega * ahead
 
         self.publish_prediction(t_future, theta_future)
+        self.state_pub.publish(
+            Float64MultiArray(data=[t, theta_meas, omega, now]))
         self.pending.append((now, t_future, theta_future, omega))
         if self.first_pred_t is None:
             self.first_pred_t = now
