@@ -47,8 +47,17 @@ fi
 } > "$OUT/run_info.txt"
 
 remove_target() {
+  # Stop EVERY target controller (including one started by hand in another
+  # terminal), then remove the cube. Two controllers running at once publish
+  # two different handle positions on the same topic and ruin the results.
+  pkill -f target_motion > /dev/null 2>&1
+  sleep 2
   ros2 service call /delete_entity gazebo_msgs/srv/DeleteEntity \
     "{name: rotating_target}" > /dev/null 2>&1
+}
+
+count_publishers() {
+  ros2 topic info /target/handle_true 2>/dev/null | awk '/Publisher count/ {print $3}'
 }
 
 for cond in "${CONDITIONS[@]}"; do
@@ -77,6 +86,13 @@ for cond in "${CONDITIONS[@]}"; do
     kill -TERM $TARGET_PID 2>/dev/null; wait $TARGET_PID 2>/dev/null
     continue
   fi
+  NPUB=$(count_publishers)
+  if [ "$NPUB" != "1" ]; then
+    echo "  STOPPED: $NPUB publishers on /target/handle_true (must be 1)."
+    echo "  Close any other terminal running the target, then run again."
+    kill -TERM $TARGET_PID 2>/dev/null; wait $TARGET_PID 2>/dev/null
+    exit 1
+  fi
 
   # All four methods at once, each with its own node name and output topics
   PIDS=""
@@ -103,6 +119,7 @@ for cond in "${CONDITIONS[@]}"; do
   done
 
   kill -TERM $TARGET_PID 2>/dev/null; wait $TARGET_PID 2>/dev/null
+  pkill -f target_motion > /dev/null 2>&1
 done
 remove_target
 
