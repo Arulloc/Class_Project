@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """capture.py: Stage B - try to catch the spinning handle with the arm.
 
-How one trial works (report section 5.7):
+How one trial works
   1. The arm waits at a fixed HOVER pose, 10 cm above a fixed MEETING POINT on
      the handle's circle (the point nearest the arm), gripper pointing down
      with its fingers opening along the handle's direction of travel.
