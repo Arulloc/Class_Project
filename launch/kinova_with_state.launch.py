@@ -187,10 +187,18 @@ def launch_setup(context, *args, **kwargs):
         output="screen",
     )
 
+    # Let Gazebo find our own models and their textures (for example the
+    # AprilTag image on the target), which are referenced as model://...
+    model_path = {
+        "GAZEBO_MODEL_PATH": os.path.expanduser("~/class_project/models")
+        + ":" + os.environ.get("GAZEBO_MODEL_PATH", "")
+    }
+
     # Gazebo nodes
     gzserver = ExecuteProcess(
         cmd=["gzserver", "-s", "libgazebo_ros_init.so", "-s", "libgazebo_ros_factory.so", os.path.expanduser("~/class_project/worlds/lab.world")],
         output="screen",
+        additional_env=model_path,
         condition=IfCondition(sim_gazebo),
     )
 
@@ -198,6 +206,7 @@ def launch_setup(context, *args, **kwargs):
     gzclient = ExecuteProcess(
         cmd=["gzclient"],
         output="screen",
+        additional_env=model_path,
         condition=IfCondition(sim_gazebo),
     )
 
@@ -213,7 +222,8 @@ def launch_setup(context, *args, **kwargs):
         package="gazebo_ros",
         executable="spawn_entity.py",
         name="spawn_robot",
-        arguments=["-entity", robot_name, "-topic", "robot_description"],
+        # Wait up to 120 s for Gazebo: its first start can take over 30 s
+        arguments=["-entity", robot_name, "-topic", "robot_description", "-timeout", "120"],
         output="screen",
         condition=IfCondition(sim_gazebo),
     )
