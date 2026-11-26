@@ -30,7 +30,9 @@ mkdir -p "$OUT"
 export PYTHONUNBUFFERED=1
 
 METHODS="reactive last_two average kalman"
-PERIODS="20 10 5 3"
+# Spin periods to run; to run only some (e.g. after a stop):
+#   PERIODS="5 3" bash scripts/run_stageC.sh   (keeps the other results)
+PERIODS=${PERIODS:-"20 10 5 3"}
 TRIALS=10
 if [ "$1" = "test" ]; then
   METHODS="reactive kalman"; PERIODS="10"; TRIALS=3
@@ -43,7 +45,7 @@ fi
   echo "uncommitted changes: $(git status --porcelain | wc -l) files"
   echo "methods: $METHODS   periods: $PERIODS   trials: $TRIALS   input: camera"
   echo "camera pose: x=$CAM_X y=$CAM_Y z=$CAM_Z pitch=$CAM_PITCH yaw=$CAM_YAW   kf_r=$KF_R"
-} > "$OUT/run_info.txt"
+} >> "$OUT/run_info.txt"
 
 stop_all() {
   # Stop every target controller, predictor and capture program, however
