@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """capture.py: Stage B - try to catch the spinning handle with the arm.
 
-How one trial works:
+How one trial works (report section 5.7):
   1. The arm waits at a fixed HOVER pose, 10 cm above a fixed MEETING POINT on
      the handle's circle (the point nearest the arm), gripper pointing down
      with its fingers opening along the handle's direction of travel.
@@ -522,12 +522,15 @@ class Capture(Node):
                     f'{omega:.4f}', f'{along:.5f}', f'{across:.5f}',
                     f'{vert:.5f}', f'{dist:.5f}', int(ok)])
                 self.log_fh.flush()
-        if q is not None and h is not None and dist > 0.25:
-            # A miss this large means the arm itself went wrong (for example a
-            # physics blow-up in Gazebo), not the prediction. Stop the run.
+        if q is not None and float(np.max(np.abs(q - self.q_grasp))) > 0.1:
+            # The arm was not where it was told to be at the grasp time
+            # (for example after a physics blow-up in Gazebo), so the arm
+            # itself went wrong, not the prediction. Stop the run. (A large
+            # miss with the arm in the right place is a real result.)
             self.get_logger().error(
-                'Error over 25 cm: the arm has probably been knocked out of '
-                'position. Stopping; restart Gazebo before running again.')
+                'At the grasp time the arm was not in the grasp pose: it has '
+                'probably been knocked out of position. Stopping; restart '
+                'Gazebo before running again.')
             self.broken = True
             self.done = True
             return
