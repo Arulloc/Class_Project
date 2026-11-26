@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """capture.py: Stage B - try to catch the spinning handle with the arm.
 
-How one trial works (report section 5.7):
+How one trial works:
   1. The arm waits at a fixed HOVER pose, 10 cm above a fixed MEETING POINT on
      the handle's circle (the point nearest the arm), gripper pointing down
      with its fingers opening along the handle's direction of travel.
@@ -42,6 +42,10 @@ from geometry_msgs.msg import PoseStamped
 from sensor_msgs.msg import JointState
 from std_msgs.msg import Float64MultiArray, String
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
+try:                                     # only needed with ik_source:=moveit
+    from moveit_msgs.srv import GetPositionIK
+except ImportError:
+    GetPositionIK = None
 
 ARM_JOINTS = ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6']
 EE_LINK = 'end_effector_link'
@@ -187,6 +191,18 @@ def solve_ik(chain, T_goal, seeds, ok=None, iters=300):
     return None if best is None else best[1]
 
 
+def rot_to_quat(R):
+    """Rotation matrix to quaternion (x, y, z, w)."""
+    w = math.sqrt(max(0.0, 1 + R[0, 0] + R[1, 1] + R[2, 2])) / 2
+    x = math.sqrt(max(0.0, 1 + R[0, 0] - R[1, 1] - R[2, 2])) / 2
+    y = math.sqrt(max(0.0, 1 - R[0, 0] + R[1, 1] - R[2, 2])) / 2
+    z = math.sqrt(max(0.0, 1 - R[0, 0] - R[1, 1] + R[2, 2])) / 2
+    x = math.copysign(x, R[2, 1] - R[1, 2])
+    y = math.copysign(y, R[0, 2] - R[2, 0])
+    z = math.copysign(z, R[1, 0] - R[0, 1])
+    return x, y, z, w
+
+
 def wrap(a):
     return math.atan2(math.sin(a), math.cos(a))
 
@@ -215,6 +231,7 @@ class Capture(Node):
         P('tcp_offset', 0.12)            # grasp point beyond end_effector_link (m)
         P('finger_axis', 'y')            # end-effector axis the fingers open along
         P('tolerance', 0.036)            # capture tolerance (m), report 6.2
+        P('ik_source', 'own')            # 'own' or 'moveit' (MoveIt's IK service)
         g = lambda n: self.get_parameter(n).value
         self.method = g('method')
         self.trials = int(g('trials'))
@@ -227,6 +244,13 @@ class Capture(Node):
         self.rise = float(g('rise'))
         self.tcp = float(g('tcp_offset'))
         self.tol = float(g('tolerance'))
+        self.ik_source = g('ik_source')
+        if self.ik_source == 'moveit':
+            if GetPositionIK is None:
+                raise RuntimeError('ik_source:=moveit needs MoveIt '
+                                   '(sudo apt install ros-humble-moveit)')
+            self.ik_client = self.create_client(GetPositionIK, '/compute_ik')
+        self.ik_futures = None
 
         # Meeting point, and the direction the handle moves there (tangent)
         self.meet = np.array([self.cx + self.r * math.cos(self.theta_m),
@@ -373,6 +397,9 @@ class Capture(Node):
         now = self.now()
         if self.phase == 'setup':
             self.setup(now)
+        elif self.phase == 'moveit_ik':
+            if all(f.done() for f in self.ik_futures):
+                self.moveit_ik_done()
         elif self.phase == 'to_hover':
             # Wait until the arm has really arrived (all joints within 0.03 rad).
             # The time-out uses the computer's clock: the simulation clock
@@ -442,6 +469,67 @@ class Capture(Node):
             f'{err_h * 1000:.2f} mm, grasp {err_g * 1000:.2f} mm off. '
             f'Hover joints {np.round(self.q_hover, 3)}; grasp joints '
             f'{np.round(self.q_grasp, 3)}')
+        if self.ik_source == 'moveit':
+            # Ask MoveIt for the same two poses; finished in moveit_ik_done()
+            if not self.ik_client.wait_for_service(timeout_sec=5.0):
+                self.get_logger().error('MoveIt IK service /compute_ik not '
+                                        'available. Is MoveIt running?')
+                self.done = True
+                return
+            self.own = (self.q_hover.copy(), self.q_grasp.copy())
+            self.ik_futures = [
+                self.ik_client.call_async(self.ik_request(hover, self.q_now)),
+                self.ik_client.call_async(self.ik_request(self.meet, self.own[0]))]
+            self.get_logger().info('Asking MoveIt for the hover and grasp poses...')
+            self.phase = 'moveit_ik'
+            return
+        self.finish_setup()
+
+    def ik_request(self, p, seed):
+        req = GetPositionIK.Request()
+        r = req.ik_request
+        r.group_name = 'manipulator'
+        r.ik_link_name = EE_LINK
+        r.avoid_collisions = False
+        r.robot_state.joint_state.name = list(ARM_JOINTS)
+        r.robot_state.joint_state.position = [float(v) for v in seed]
+        T = self.goal_for(p)
+        r.pose_stamped.header.frame_id = 'base_link'
+        pos = r.pose_stamped.pose.position
+        pos.x, pos.y, pos.z = (float(v) for v in T[:3, 3])
+        o = r.pose_stamped.pose.orientation
+        o.x, o.y, o.z, o.w = rot_to_quat(T[:3, :3])
+        r.timeout = Duration(sec=1)
+        return req
+
+    def moveit_ik_done(self):
+        """Use MoveIt's poses, after checking them with our own arm model."""
+        sols = []
+        for f, name in zip(self.ik_futures, ('hover', 'grasp')):
+            res = f.result()
+            if res is None or res.error_code.val != 1:
+                code = None if res is None else res.error_code.val
+                self.get_logger().error(f'MoveIt found no {name} pose (code {code}).')
+                self.done = True
+                return
+            js = dict(zip(res.solution.joint_state.name,
+                          res.solution.joint_state.position))
+            sols.append(np.array([js[j] for j in ARM_JOINTS]))
+        hover = self.meet + np.array([0, 0, float(
+            self.get_parameter('hover_height').value)])
+        for name, q_m, q_o, target in (('hover', sols[0], self.own[0], hover),
+                                       ('grasp', sols[1], self.own[1], self.meet)):
+            gap = np.linalg.norm(self.grasp_point(q_m) - target)
+            diff = np.max(np.abs([wrap(a - b) for a, b in zip(q_m, q_o)]))
+            self.get_logger().info(
+                f'Cross-check, {name} pose: MoveIt joints {np.round(q_m, 3)} put '
+                f'the grasp point {gap * 1000:.2f} mm from the target (our arm '
+                f'model); largest joint difference from our own solver '
+                f'{math.degrees(diff):.2f} deg')
+        self.q_hover, self.q_grasp = sols
+        self.finish_setup()
+
+    def finish_setup(self):
         if not (self.path_safe(self.q_now, self.q_hover)
                 and self.path_safe(self.q_hover, self.q_grasp)):
             self.get_logger().error(
