@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""analyze_stageB.py: turn Stage B capture logs into a results table and figures.
+"""analyze_stageB.py: turn Stage B or C capture logs into a results table and figures.
 
-Reads every results/stageB/stageB_*.csv written by scripts/capture.py (one file
+Reads every results/stageB/stageB_*.csv (or results/stageC/stageC_*.csv) written by scripts/capture.py (one file
 per method and spin period, one row per capture attempt) and writes into the
 same folder:
   summary.csv   - one row per method and spin period
@@ -36,7 +36,7 @@ TOLERANCE_MM = 36.0
 
 def load(folder):
     runs = []
-    for path in sorted(glob.glob(os.path.join(folder, 'stageB_*.csv'))):
+    for path in sorted(glob.glob(os.path.join(folder, 'stage[BC]_*.csv'))):
         with open(path) as f:
             rows = list(csv.DictReader(f))
         if not rows:
@@ -116,7 +116,7 @@ def main():
     folder = sys.argv[1] if len(sys.argv) > 1 else 'results/stageB'
     runs = load(folder)
     if not runs:
-        sys.exit(f'No stageB_*.csv files in {folder}')
+        sys.exit(f'No stageB_*.csv or stageC_*.csv files in {folder}')
     write_tables(runs, folder)
     print(f'{len(runs)} runs -> summary.csv, summary.md')
 
