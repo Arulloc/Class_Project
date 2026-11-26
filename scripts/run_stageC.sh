@@ -14,10 +14,23 @@
 #
 # Usage:  bash scripts/run_stageC.sh          full set (about 25-30 minutes)
 #         bash scripts/run_stageC.sh test     10 s spin, reactive + kalman, 3 tries each
+#         MOVEIT=1 bash scripts/run_stageC.sh [test]
+#             use MoveIt (Chris's move_to_point_moveit.py) to move the arm to
+#             the hover pose, and MoveIt's inverse kinematics for the two poses.
+#             MoveIt must already be running (Terminal 2):
+#             ros2 launch kinova_gen3_6dof_robotiq_2f_85_moveit_config sim.launch.py \
+#                 sim_ignition:=false use_sim_time:=true
 
 cd "$(dirname "$0")/.."
 source install/setup.bash
-OUT="$(pwd)/results/stageC"
+MOVEIT=${MOVEIT:-0}
+if [ "$MOVEIT" = "1" ]; then
+  OUT="$(pwd)/results/stageC_moveit"
+  IK_SOURCE=moveit
+else
+  OUT="$(pwd)/results/stageC"
+  IK_SOURCE=own
+fi
 
 # Camera pose in the world (m, rad): 25 cm beyond the target, 75 cm up,
 # looking back down at the tag at about 63 degrees, on the far side from the
@@ -44,6 +57,7 @@ fi
   echo "commit: $(git rev-parse --short HEAD)"
   echo "uncommitted changes: $(git status --porcelain | wc -l) files"
   echo "methods: $METHODS   periods: $PERIODS   trials: $TRIALS   input: camera"
+  echo "arm poses from: $IK_SOURCE"
   echo "camera pose: x=$CAM_X y=$CAM_Y z=$CAM_Z pitch=$CAM_PITCH yaw=$CAM_YAW   kf_r=$KF_R"
 } >> "$OUT/run_info.txt"
 
@@ -63,6 +77,11 @@ remove_target() {
 }
 
 stop_all
+
+if [ "$MOVEIT" = "1" ] && ! ros2 service list | grep -q "^/compute_ik$"; then
+  echo "STOPPED: MOVEIT=1 but MoveIt is not running (no /compute_ik service)."
+  exit 1
+fi
 
 # Put Aleeya's camera (models/standalone_camera.urdf, unchanged) in place,
 # removing any old copy first. Its link has gravity turned off, so it stays
@@ -126,10 +145,15 @@ for PERIOD in $PERIODS; do
       -r /target/handle_true:=/target/handle_measured \
       > "$OUT/predictor_${TAG}.log" 2>&1 &
     sleep 3
+    if [ "$MOVEIT" = "1" ]; then
+      # Chris's MoveIt script: wrist 12 cm above the hover point, gripper down
+      python3 scripts/move_to_point_moveit.py 0.37 0 0.42 --rpy 3.1416 0 0 \
+        >> "$OUT/moveit_${TAG}.log" 2>&1 || echo "  (MoveIt move to hover failed; capture.py will move the arm itself)"
+    fi
     # Generous time limit: 10 tries at a 20 s spin take about 4 minutes
     timeout 900 python3 scripts/capture.py --ros-args -p use_sim_time:=true \
       -p method:=$M -p spin_period:=$F_PERIOD -p trials:=$TRIALS \
-      -p log_file:="$OUT/stageC_${TAG}.csv" > "$OUT/capture_${TAG}.log" 2>&1
+      -p ik_source:=$IK_SOURCE -p log_file:="$OUT/stageC_${TAG}.csv" > "$OUT/capture_${TAG}.log" 2>&1
     STATUS=$?
     pkill -f "rotating_target/predictor" > /dev/null 2>&1
     F="$OUT/stageC_${TAG}.csv"
