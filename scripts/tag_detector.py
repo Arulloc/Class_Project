@@ -12,7 +12,7 @@ For every camera image it:
      image was taken. The predictor reads this instead of the ground truth.
 
 It also logs every detection next to the ground truth at the same instant,
-so the camera's own error and delay can be reported (6.1, 7.4).
+so the camera's own error and delay can be reported.
 
 Tag orientation on the cube: Gazebo may paint the tag onto the cube top
 rotated by a multiple of 90 degrees. At start-up the detector compares its
@@ -105,7 +105,8 @@ class TagDetector(Node):
         self.detect = make_detector()
         self.K = None
         self.truth = []
-        self.n_images = self.n_found = 0
+        self.n_images = self.n_found = self.n_seen = 0
+        self.pending = []                # detections waiting for the next truth reading
         self.errs, self.lags = [], []
 
         self.pub = self.create_publisher(PoseStamped, '/target/handle_measured', 10)
@@ -135,6 +136,21 @@ class TagDetector(Node):
         if not self.truth or t > self.truth[-1][0]:
             self.truth.append((t, p.x, p.y, p.z))
             self.truth = self.truth[-300:]
+            self.process_pending()
+
+    def process_pending(self):
+        """The ground truth arrives only about 10 times a second, so each
+        detection is compared once a truth reading from after it has arrived."""
+        t_last = self.truth[-1][0]
+        keep = []
+        for item in self.pending:
+            if item[0] > t_last:
+                keep.append(item)            # not yet: wait for the next reading
+                continue
+            truth = self.truth_at(item[0])
+            if truth is not None:
+                self.compare(item, truth)
+        self.pending = keep[-100:]
 
     def truth_at(self, t):
         for a, b in zip(self.truth, self.truth[1:]):
@@ -169,21 +185,11 @@ class TagDetector(Node):
         p_tag = self.R_wo @ tvec.flatten() + self.cam_pos
         x_axis = self.R_wo @ R_ct[:, 0]
         yaw = math.atan2(x_axis[1], x_axis[0])
-        truth = self.truth_at(t_img)
-
+        self.n_seen += 1
         if self.yaw_offset is None:
             # One-off: which way round is the tag painted on the cube?
-            if truth is not None:
-                true_ang = math.atan2(truth[1] - p_tag[1], truth[0] - p_tag[0])
-                self.calib.append(wrap(true_ang - yaw))
-            if len(self.calib) >= 30:
-                mean = math.atan2(sum(math.sin(a) for a in self.calib),
-                                  sum(math.cos(a) for a in self.calib))
-                self.yaw_offset = math.radians(90 * round(math.degrees(mean) / 90))
-                self.get_logger().info(
-                    f'Tag orientation on the cube: handle is '
-                    f'{math.degrees(self.yaw_offset):.0f} deg from the tag x-axis '
-                    f'(measured {math.degrees(mean):.1f} deg, rounded to 90)')
+            # (compared with the ground truth once its next reading arrives)
+            self.pending.append((t_img, 'calib', p_tag, yaw))
             return
 
         ang = yaw + self.yaw_offset
@@ -198,22 +204,39 @@ class TagDetector(Node):
         msg.pose.orientation.w = math.cos(ang / 2)
         self.pub.publish(msg)
         self.n_found += 1
-
         t_pub = self.get_clock().now().nanoseconds * 1e-9
-        lag = t_pub - t_img
-        self.lags.append(lag)
-        if truth is not None:
-            err = float(np.linalg.norm(h - truth))
-            cx, cy = p_tag[0], p_tag[1]
-            a_err = math.degrees(wrap(math.atan2(h[1] - cy, h[0] - cx)
-                                      - math.atan2(truth[1] - cy, truth[0] - cx)))
-            self.errs.append(err)
-            if self.log:
-                self.log.writerow([f'{t_img:.3f}', f'{t_pub:.3f}', f'{lag:.4f}',
-                                   *[f'{v:.5f}' for v in h],
-                                   *[f'{v:.5f}' for v in truth],
-                                   f'{err:.5f}', f'{a_err:.3f}'])
-                self.log_fh.flush()
+        self.lags.append(t_pub - t_img)
+        self.pending.append((t_img, 'log', p_tag, h, t_pub))
+
+    def compare(self, item, truth):
+        t_img, kind, p_tag = item[0], item[1], item[2]
+        if kind == 'calib':
+            if self.yaw_offset is not None:
+                return
+            yaw = item[3]
+            true_ang = math.atan2(truth[1] - p_tag[1], truth[0] - p_tag[0])
+            self.calib.append(wrap(true_ang - yaw))
+            if len(self.calib) >= 30:
+                mean = math.atan2(sum(math.sin(a) for a in self.calib),
+                                  sum(math.cos(a) for a in self.calib))
+                self.yaw_offset = math.radians(90 * round(math.degrees(mean) / 90))
+                self.get_logger().info(
+                    f'Tag orientation on the cube: handle is '
+                    f'{math.degrees(self.yaw_offset):.0f} deg from the tag x-axis '
+                    f'(measured {math.degrees(mean):.1f} deg, rounded to 90)')
+            return
+        h, t_pub = item[3], item[4]
+        err = float(np.linalg.norm(h - truth))
+        cx, cy = p_tag[0], p_tag[1]
+        a_err = math.degrees(wrap(math.atan2(h[1] - cy, h[0] - cx)
+                                  - math.atan2(truth[1] - cy, truth[0] - cx)))
+        self.errs.append(err)
+        if self.log:
+            self.log.writerow([f'{t_img:.3f}', f'{t_pub:.3f}', f'{t_pub - t_img:.4f}',
+                               *[f'{v:.5f}' for v in h],
+                               *[f'{v:.5f}' for v in truth],
+                               f'{err:.5f}', f'{a_err:.3f}'])
+            self.log_fh.flush()
 
     def report(self):
         if self.K is None:
@@ -222,8 +245,8 @@ class TagDetector(Node):
         if self.n_images == 0:
             self.get_logger().warn('No images yet.')
             return
-        msg = (f'images {self.n_images}, handle measured in {self.n_found} '
-               f'({100 * self.n_found / self.n_images:.0f}%)')
+        msg = (f'images {self.n_images}, tag found in {self.n_seen} '
+               f'({100 * self.n_seen / self.n_images:.0f}%), handle published {self.n_found}')
         if self.errs:
             msg += (f'; error vs ground truth mean {1000 * np.mean(self.errs):.1f} mm, '
                     f'largest {1000 * max(self.errs):.1f} mm')
