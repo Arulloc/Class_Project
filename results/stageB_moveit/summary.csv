@@ -1,0 +1,17 @@
+method,period,speed,n,captured,rate,along_mean,along_abs,along_std,across_abs,vert_abs,dist_mean,dist_max,file
+reactive,20.0,0.314,10,10,100.0,-33.115,33.115,1.908,4.287,0.01,33.395,34.61,stageB_P20_reactive.csv
+last_two,20.0,0.314,10,10,100.0,0.0,0.0,0.0,0.0,0.01,0.01,0.01,stageB_P20_last_two.csv
+average,20.0,0.314,10,10,100.0,0.0,0.0,0.0,0.0,0.01,0.01,0.01,stageB_P20_average.csv
+kalman,20.0,0.314,10,10,100.0,0.01,0.01,0.0,0.03,0.0,0.031,0.04,stageB_P20_kalman.csv
+reactive,10.0,0.628,10,0,0.0,-64.015,64.015,3.454,16.861,0.01,66.207,68.58,stageB_P10_reactive.csv
+last_two,10.0,0.628,10,10,100.0,0.0,0.0,0.0,0.0,0.01,0.01,0.01,stageB_P10_last_two.csv
+average,10.0,0.628,10,10,100.0,0.0,0.0,0.0,0.0,0.01,0.01,0.01,stageB_P10_average.csv
+kalman,10.0,0.628,10,10,100.0,0.0,0.0,0.0,0.0,0.01,0.01,0.01,stageB_P10_kalman.csv
+reactive,5.0,1.257,10,0,0.0,-109.545,109.545,4.612,60.225,0.01,125.07,132.22,stageB_P5_reactive.csv
+last_two,5.0,1.257,10,10,100.0,0.0,0.0,0.0,0.0,0.01,0.01,0.01,stageB_P5_last_two.csv
+average,5.0,1.257,10,10,100.0,-0.01,0.01,0.0,0.01,0.01,0.02,0.02,stageB_P5_average.csv
+kalman,5.0,1.257,10,10,100.0,0.0,0.0,0.0,0.0,0.01,0.01,0.01,stageB_P5_kalman.csv
+reactive,3.0,2.094,10,0,0.0,-129.422,129.422,1.197,134.704,0.01,186.972,201.5,stageB_P3_reactive.csv
+last_two,3.0,2.094,10,10,100.0,0.0,0.0,0.0,0.0,0.01,0.01,0.01,stageB_P3_last_two.csv
+average,3.0,2.094,10,10,100.0,0.0,0.0,0.0,0.0,0.01,0.01,0.01,stageB_P3_average.csv
+kalman,3.0,2.094,10,10,100.0,0.0,0.0,0.0,0.0,0.01,0.01,0.01,stageB_P3_kalman.csv

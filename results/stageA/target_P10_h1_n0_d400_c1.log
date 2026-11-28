@@ -1,0 +1,6 @@
+[INFO] [launch]: All log files can be found below /home/celeste/.ros/log/2026-11-24-20-31-45-311914-DESKTOP-N8LKL6P-47325
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [target_motion-1]: process started with pid [47328]
+[target_motion-1] [INFO] [1795570306.098368976] [target_motion]: Target controller initialized: spin
+[target_motion-1] [INFO] [1795570306.680736941] [target_motion]: Spawning target in Gazebo...
+[target_motion-1] [INFO] [1795570306.899844143] [target_motion]: Target spawned. Starting mode: spin

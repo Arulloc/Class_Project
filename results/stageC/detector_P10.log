@@ -1,0 +1,20 @@
+[WARN] [1795657461.676286702] [tag_detector]: No camera_info yet. Is the camera spawned?
+[INFO] [1795657462.968007980] [tag_detector]: Tag orientation on the cube: handle is 90 deg from the tag x-axis (measured 91.1 deg, rounded to 90)
+[INFO] [1795657465.002622694] [tag_detector]: images 102, tag found in 82 (80%), handle published 51; error vs ground truth mean 3.4 mm, largest 7.0 mm; processing delay -44 ms
+[INFO] [1795657470.114140326] [tag_detector]: images 252, tag found in 210 (83%), handle published 179; error vs ground truth mean 4.5 mm, largest 9.6 mm; processing delay -44 ms
+Traceback (most recent call last):
+  File "/home/celeste/class_project/scripts/tag_detector.py", line 280, in <module>
+    main()
+  File "/home/celeste/class_project/scripts/tag_detector.py", line 269, in main
+    rclpy.spin(node)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 229, in spin
+    executor.spin_once()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 812, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 801, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 784, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 685, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException

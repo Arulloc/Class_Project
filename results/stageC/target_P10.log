@@ -1,0 +1,23 @@
+[INFO] [launch]: All log files can be found below /home/celeste/.ros/log/2026-11-25-20-44-17-363141-DESKTOP-N8LKL6P-62038
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [target_motion-1]: process started with pid [62041]
+[target_motion-1] [INFO] [1795657458.077078447] [target_motion]: Target controller initialized: spin
+[target_motion-1] [INFO] [1795657458.078825600] [target_motion]: Spawning target in Gazebo...
+[target_motion-1] [INFO] [1795657458.119083422] [target_motion]: Target spawned. Starting mode: spin
+[target_motion-1] Traceback (most recent call last):
+[target_motion-1]   File "/home/celeste/class_project/install/rotating_target/lib/rotating_target/target_motion", line 33, in <module>
+[target_motion-1]     sys.exit(load_entry_point('rotating-target==0.0.0', 'console_scripts', 'target_motion')())
+[target_motion-1]   File "/home/celeste/class_project/install/rotating_target/lib/python3.10/site-packages/rotating_target/target_motion.py", line 217, in main
+[target_motion-1]     rclpy.spin(node)
+[target_motion-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 229, in spin
+[target_motion-1]     executor.spin_once()
+[target_motion-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 812, in spin_once
+[target_motion-1]     self._spin_once_impl(timeout_sec)
+[target_motion-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 801, in _spin_once_impl
+[target_motion-1]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[target_motion-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 784, in wait_for_ready_callbacks
+[target_motion-1]     return next(self._cb_iter)
+[target_motion-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 685, in _wait_for_ready_callbacks
+[target_motion-1]     raise ExternalShutdownException()
+[target_motion-1] rclpy.executors.ExternalShutdownException
+[ERROR] [target_motion-1]: process has died [pid 62041, exit code 1, cmd '/home/celeste/class_project/install/rotating_target/lib/rotating_target/target_motion --ros-args -r __node:=target_motion --params-file /tmp/launch_params_6t9pthuv'].

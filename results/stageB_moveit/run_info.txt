@@ -1,0 +1,6 @@
+date: 2026-11-27T19:25:06-05:00
+branch: feature/celeste/prediction
+commit: ff8fd51
+uncommitted changes: 1 files
+methods: reactive last_two average kalman   periods: 20 10 5 3   trials: 10   noise: 0.0 m
+arm poses from: moveit

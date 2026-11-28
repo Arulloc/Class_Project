@@ -1,0 +1,48 @@
+[INFO] [1795617665.502112032] [predictor]: Predictor: method=last_two, horizon=1.0 s, noise=5.0 mm, delay=0.0 s, compensate=True
+[INFO] [1795617671.660607600] [predictor]: last_two: 1.0 s ahead, error mean 118.0 mm, max 118.0 mm (1 checks); speed 2.101 rad/s
+[INFO] [1795617673.663880191] [predictor]: last_two: 1.0 s ahead, error mean 51.7 mm, max 175.5 mm (20 checks); speed 2.097 rad/s
+[INFO] [1795617675.667598943] [predictor]: last_two: 1.0 s ahead, error mean 46.0 mm, max 142.2 mm (20 checks); speed 2.098 rad/s
+[INFO] [1795617677.668768374] [predictor]: last_two: 1.0 s ahead, error mean 72.8 mm, max 200.1 mm (20 checks); speed 2.093 rad/s
+[INFO] [1795617679.670944012] [predictor]: last_two: 1.0 s ahead, error mean 51.7 mm, max 155.8 mm (20 checks); speed 2.094 rad/s
+[INFO] [1795617681.676641268] [predictor]: last_two: 1.0 s ahead, error mean 63.3 mm, max 164.0 mm (20 checks); speed 2.097 rad/s
+[INFO] [1795617683.679954200] [predictor]: last_two: 1.0 s ahead, error mean 43.2 mm, max 74.4 mm (20 checks); speed 2.096 rad/s
+[INFO] [1795617685.680995046] [predictor]: last_two: 1.0 s ahead, error mean 55.5 mm, max 135.9 mm (20 checks); speed 2.096 rad/s
+[INFO] [1795617687.683712597] [predictor]: last_two: 1.0 s ahead, error mean 70.7 mm, max 164.2 mm (20 checks); speed 2.090 rad/s
+[INFO] [1795617689.687792774] [predictor]: last_two: 1.0 s ahead, error mean 58.1 mm, max 142.6 mm (20 checks); speed 2.094 rad/s
+[INFO] [1795617691.690396248] [predictor]: last_two: 1.0 s ahead, error mean 70.1 mm, max 177.1 mm (20 checks); speed 2.093 rad/s
+[INFO] [1795617693.694055236] [predictor]: last_two: 1.0 s ahead, error mean 57.9 mm, max 125.9 mm (20 checks); speed 2.093 rad/s
+[INFO] [1795617695.696036140] [predictor]: last_two: 1.0 s ahead, error mean 42.5 mm, max 123.5 mm (20 checks); speed 2.095 rad/s
+[INFO] [1795617697.700453203] [predictor]: last_two: 1.0 s ahead, error mean 78.4 mm, max 182.0 mm (20 checks); speed 2.095 rad/s
+[INFO] [1795617700.346239922] [predictor]: last_two: 1.0 s ahead, error mean 49.8 mm, max 120.8 mm (20 checks); speed 2.093 rad/s
+[INFO] [1795617702.664992598] [predictor]: last_two: 1.0 s ahead, error mean 52.3 mm, max 138.1 mm (20 checks); speed 2.099 rad/s
+[INFO] [1795617704.668010461] [predictor]: last_two: 1.0 s ahead, error mean 75.5 mm, max 202.0 mm (20 checks); speed 2.088 rad/s
+[INFO] [1795617706.671308364] [predictor]: last_two: 1.0 s ahead, error mean 74.8 mm, max 156.2 mm (20 checks); speed 2.090 rad/s
+[INFO] [1795617708.673662973] [predictor]: last_two: 1.0 s ahead, error mean 80.4 mm, max 211.2 mm (20 checks); speed 2.097 rad/s
+[INFO] [1795617710.676081347] [predictor]: last_two: 1.0 s ahead, error mean 72.3 mm, max 172.9 mm (20 checks); speed 2.095 rad/s
+[INFO] [1795617712.679790571] [predictor]: last_two: 1.0 s ahead, error mean 71.6 mm, max 178.9 mm (20 checks); speed 2.091 rad/s
+[INFO] [1795617714.683223312] [predictor]: last_two: 1.0 s ahead, error mean 44.4 mm, max 153.5 mm (20 checks); speed 2.096 rad/s
+[INFO] [1795617716.685829994] [predictor]: last_two: 1.0 s ahead, error mean 69.2 mm, max 169.8 mm (20 checks); speed 2.093 rad/s
+[INFO] [1795617718.687534688] [predictor]: last_two: 1.0 s ahead, error mean 58.7 mm, max 152.8 mm (20 checks); speed 2.096 rad/s
+[INFO] [1795617720.691957400] [predictor]: last_two: 1.0 s ahead, error mean 60.5 mm, max 164.3 mm (20 checks); speed 2.097 rad/s
+[INFO] [1795617722.695110386] [predictor]: last_two: 1.0 s ahead, error mean 40.7 mm, max 99.4 mm (20 checks); speed 2.092 rad/s
+[INFO] [1795617724.698638637] [predictor]: last_two: 1.0 s ahead, error mean 61.1 mm, max 123.1 mm (20 checks); speed 2.095 rad/s
+[INFO] [1795617726.700391486] [predictor]: last_two: 1.0 s ahead, error mean 82.6 mm, max 182.7 mm (20 checks); speed 2.096 rad/s
+[INFO] [1795617728.705102651] [predictor]: last_two: 1.0 s ahead, error mean 73.2 mm, max 169.2 mm (20 checks); speed 2.091 rad/s
+[INFO] [1795617730.708170307] [predictor]: last_two: 1.0 s ahead, error mean 66.9 mm, max 179.6 mm (20 checks); speed 2.094 rad/s
+Traceback (most recent call last):
+  File "/home/celeste/class_project/install/rotating_target/lib/rotating_target/predictor", line 33, in <module>
+    sys.exit(load_entry_point('rotating-target==0.0.0', 'console_scripts', 'predictor')())
+  File "/home/celeste/class_project/install/rotating_target/lib/python3.10/site-packages/rotating_target/predictor.py", line 374, in main
+    rclpy.spin_once(node, timeout_sec=0.5)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 208, in spin_once
+    executor.spin_once(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 812, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 801, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 784, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 685, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException
+[ros2run]: Process exited with failure 1

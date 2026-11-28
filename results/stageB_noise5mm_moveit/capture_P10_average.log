@@ -1,0 +1,28 @@
+[INFO] [1795828751.828451699] [capture]: Arm now at joints [ 6.000e-03  1.830e-01 -1.706e+00  1.500e-02 -1.259e+00  6.269e+00]; working out the hover and grasp poses...
+[INFO] [1795828764.875772003] [capture]: Meeting point [0.37 0.   0.2 ]; IK check: hover 0.00 mm, grasp 0.00 mm off. Hover joints [ 4.000e-03  1.770e-01 -1.720e+00  0.000e+00 -1.244e+00  6.287e+00]; grasp joints [ 4.000e-03  2.950e-01 -1.923e+00 -0.000e+00 -9.230e-01  6.287e+00]
+[INFO] [1795828764.879125903] [capture]: Asking MoveIt for the hover and grasp poses...
+[INFO] [1795828764.980636216] [capture]: Cross-check, hover pose: MoveIt joints [ 0.004  0.177 -1.72  -0.    -1.244  0.004] put the grasp point 0.00 mm from the target (our arm model); largest joint difference from our own solver 0.00 deg
+[INFO] [1795828764.981468816] [capture]: Cross-check, grasp pose: MoveIt joints [ 0.004  0.295 -1.923 -0.    -0.923  0.004] put the grasp point 0.00 mm from the target (our arm model); largest joint difference from our own solver 0.00 deg
+[INFO] [1795828764.989608417] [capture]: Moving to hover over 12.5 s
+[INFO] [1795828777.142263212] [capture]: Arm is at the hover pose.
+[INFO] [1795828777.142723912] [capture]: Trial 1/10: waiting for the handle
+[INFO] [1795828782.769091079] [capture]: Trial 1: error 2.6 mm (along -2.6, across +0.0, vertical -0.0) -> CAPTURED
+[INFO] [1795828784.374169996] [capture]: Trial 2/10: waiting for the handle
+[INFO] [1795828792.715464321] [capture]: Trial 2: error 1.2 mm (along +1.2, across +0.0, vertical -0.0) -> CAPTURED
+[INFO] [1795828794.324356975] [capture]: Trial 3/10: waiting for the handle
+[INFO] [1795828802.775540943] [capture]: Trial 3: error 7.5 mm (along +7.5, across -0.2, vertical -0.0) -> CAPTURED
+[INFO] [1795828804.386785439] [capture]: Trial 4/10: waiting for the handle
+[INFO] [1795828812.932032044] [capture]: Trial 4: error 3.8 mm (along -3.8, across +0.0, vertical -0.0) -> CAPTURED
+[INFO] [1795828814.539399111] [capture]: Trial 5/10: waiting for the handle
+[INFO] [1795828822.877398472] [capture]: Trial 5: error 2.2 mm (along +2.2, across +0.0, vertical -0.0) -> CAPTURED
+[INFO] [1795828824.485350086] [capture]: Trial 6/10: waiting for the handle
+[INFO] [1795828832.934553875] [capture]: Trial 6: error 0.8 mm (along +0.8, across +0.0, vertical -0.0) -> CAPTURED
+[INFO] [1795828834.546433500] [capture]: Trial 7/10: waiting for the handle
+[INFO] [1795828842.985422622] [capture]: Trial 7: error 4.2 mm (along +4.2, across -0.0, vertical -0.0) -> CAPTURED
+[INFO] [1795828844.593252242] [capture]: Trial 8/10: waiting for the handle
+[INFO] [1795828853.037740478] [capture]: Trial 8: error 7.9 mm (along +7.9, across -0.2, vertical -0.0) -> CAPTURED
+[INFO] [1795828854.648217894] [capture]: Trial 9/10: waiting for the handle
+[INFO] [1795828863.198717163] [capture]: Trial 9: error 3.0 mm (along -3.0, across +0.0, vertical -0.0) -> CAPTURED
+[INFO] [1795828864.804056463] [capture]: Trial 10/10: waiting for the handle
+[INFO] [1795828873.151491192] [capture]: Trial 10: error 3.8 mm (along +3.8, across +0.0, vertical -0.0) -> CAPTURED
+[INFO] [1795828874.758183332] [capture]: All trials done.

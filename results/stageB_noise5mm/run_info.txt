@@ -1,0 +1,5 @@
+date: 2026-11-25T21:28:39-05:00
+branch: feature/celeste/prediction
+commit: ace9379
+uncommitted changes: 1 files
+methods: reactive last_two average kalman   periods: 20 10 5 3   trials: 10   noise: 0.005 m

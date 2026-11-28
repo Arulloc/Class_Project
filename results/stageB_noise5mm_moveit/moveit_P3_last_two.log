@@ -1,0 +1,19 @@
+Asking MoveIt to move end_effector_link to (0.37, 0.0, 0.42) in base_link ...
+Traceback (most recent call last):
+  File "/home/celeste/class_project/scripts/move_to_point_moveit.py", line 136, in <module>
+    main()
+  File "/home/celeste/class_project/scripts/move_to_point_moveit.py", line 109, in main
+    rclpy.spin_until_future_complete(node, fut)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 256, in spin_until_future_complete
+    executor.spin_until_future_complete(future, timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 337, in spin_until_future_complete
+    self.spin_once_until_future_complete(future, timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 819, in spin_once_until_future_complete
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 801, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 784, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 685, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException

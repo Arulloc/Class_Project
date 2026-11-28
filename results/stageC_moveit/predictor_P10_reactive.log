@@ -1,0 +1,80 @@
+[INFO] [1795832966.070777371] [predictor]: Predictor: method=reactive, horizon=1.0 s, noise=0.0 mm, delay=0.0 s, compensate=True
+[INFO] [1795832975.214901350] [predictor]: reactive: 1.0 s ahead, error mean 79.1 mm, max 81.5 mm (8 checks); speed 0.633 rad/s
+[INFO] [1795832977.227785348] [predictor]: reactive: 1.0 s ahead, error mean 80.4 mm, max 84.9 mm (31 checks); speed 0.634 rad/s
+[INFO] [1795832979.343002456] [predictor]: reactive: 1.0 s ahead, error mean 80.1 mm, max 84.7 mm (63 checks); speed 0.629 rad/s
+[INFO] [1795832981.372115595] [predictor]: reactive: 1.0 s ahead, error mean 81.0 mm, max 84.0 mm (51 checks); speed 0.630 rad/s
+[INFO] [1795832983.388912893] [predictor]: reactive: 1.0 s ahead, error mean 81.3 mm, max 85.2 mm (54 checks); speed 0.628 rad/s
+[INFO] [1795832985.412225384] [predictor]: reactive: 1.0 s ahead, error mean 81.0 mm, max 86.5 mm (54 checks); speed 0.636 rad/s
+[INFO] [1795832987.430319135] [predictor]: reactive: 1.0 s ahead, error mean 80.7 mm, max 84.8 mm (60 checks); speed 0.632 rad/s
+[INFO] [1795832989.459722559] [predictor]: reactive: 1.0 s ahead, error mean 80.3 mm, max 83.0 mm (53 checks); speed 0.626 rad/s
+[INFO] [1795832991.510836165] [predictor]: reactive: 1.0 s ahead, error mean 81.1 mm, max 87.6 mm (56 checks); speed 0.628 rad/s
+[INFO] [1795832993.564966214] [predictor]: reactive: 1.0 s ahead, error mean 81.5 mm, max 86.0 mm (55 checks); speed 0.625 rad/s
+[INFO] [1795832995.585480371] [predictor]: reactive: 1.0 s ahead, error mean 80.9 mm, max 86.2 mm (53 checks); speed 0.628 rad/s
+[INFO] [1795832997.640585323] [predictor]: reactive: 1.0 s ahead, error mean 80.5 mm, max 84.3 mm (61 checks); speed 0.633 rad/s
+[INFO] [1795832999.671091717] [predictor]: reactive: 1.0 s ahead, error mean 79.6 mm, max 83.2 mm (41 checks); speed 0.628 rad/s
+[INFO] [1795833001.807745900] [predictor]: reactive: 1.0 s ahead, error mean 80.7 mm, max 87.0 mm (59 checks); speed 0.632 rad/s
+[INFO] [1795833003.870093653] [predictor]: reactive: 1.0 s ahead, error mean 81.0 mm, max 85.4 mm (46 checks); speed 0.633 rad/s
+[INFO] [1795833005.935599902] [predictor]: reactive: 1.0 s ahead, error mean 80.4 mm, max 84.8 mm (51 checks); speed 0.624 rad/s
+[INFO] [1795833008.095659284] [predictor]: reactive: 1.0 s ahead, error mean 81.4 mm, max 86.6 mm (38 checks); speed 0.632 rad/s
+[INFO] [1795833010.169825872] [predictor]: reactive: 1.0 s ahead, error mean 81.9 mm, max 86.4 mm (37 checks); speed 0.625 rad/s
+[INFO] [1795833012.247365338] [predictor]: reactive: 1.0 s ahead, error mean 80.5 mm, max 84.4 mm (35 checks); speed 0.628 rad/s
+[INFO] [1795833014.301238970] [predictor]: reactive: 1.0 s ahead, error mean 81.5 mm, max 87.9 mm (34 checks); speed 0.629 rad/s
+[INFO] [1795833016.322325066] [predictor]: reactive: 1.0 s ahead, error mean 81.0 mm, max 85.8 mm (35 checks); speed 0.630 rad/s
+[INFO] [1795833018.386251534] [predictor]: reactive: 1.0 s ahead, error mean 81.2 mm, max 86.1 mm (24 checks); speed 0.627 rad/s
+[INFO] [1795833020.408770083] [predictor]: reactive: 1.0 s ahead, error mean 80.4 mm, max 83.3 mm (48 checks); speed 0.628 rad/s
+[INFO] [1795833022.440459456] [predictor]: reactive: 1.0 s ahead, error mean 81.4 mm, max 87.3 mm (50 checks); speed 0.626 rad/s
+[INFO] [1795833024.503804106] [predictor]: reactive: 1.0 s ahead, error mean 81.4 mm, max 83.1 mm (49 checks); speed 0.627 rad/s
+[INFO] [1795833026.536121966] [predictor]: reactive: 1.0 s ahead, error mean 80.4 mm, max 84.1 mm (47 checks); speed 0.626 rad/s
+[INFO] [1795833028.594135356] [predictor]: reactive: 1.0 s ahead, error mean 81.8 mm, max 86.3 mm (31 checks); speed 0.625 rad/s
+[INFO] [1795833030.627126297] [predictor]: reactive: 1.0 s ahead, error mean 79.3 mm, max 84.1 mm (40 checks); speed 0.628 rad/s
+[INFO] [1795833032.686292609] [predictor]: reactive: 1.0 s ahead, error mean 81.3 mm, max 87.8 mm (36 checks); speed 0.632 rad/s
+[INFO] [1795833034.712019890] [predictor]: reactive: 1.0 s ahead, error mean 82.8 mm, max 87.7 mm (34 checks); speed 0.632 rad/s
+[INFO] [1795833036.784507556] [predictor]: reactive: 1.0 s ahead, error mean 81.4 mm, max 85.7 mm (33 checks); speed 0.630 rad/s
+[INFO] [1795833038.840394916] [predictor]: reactive: 1.0 s ahead, error mean 81.1 mm, max 86.0 mm (26 checks); speed 0.627 rad/s
+[INFO] [1795833040.881703933] [predictor]: reactive: 1.0 s ahead, error mean 80.2 mm, max 83.3 mm (49 checks); speed 0.624 rad/s
+[INFO] [1795833043.008662894] [predictor]: reactive: 1.0 s ahead, error mean 81.6 mm, max 87.7 mm (50 checks); speed 0.624 rad/s
+[INFO] [1795833045.040771794] [predictor]: reactive: 1.0 s ahead, error mean 81.5 mm, max 85.6 mm (48 checks); speed 0.629 rad/s
+[INFO] [1795833047.349461434] [predictor]: reactive: 1.0 s ahead, error mean 80.6 mm, max 85.9 mm (51 checks); speed 0.634 rad/s
+[INFO] [1795833049.391630786] [predictor]: reactive: 1.0 s ahead, error mean 80.2 mm, max 84.6 mm (32 checks); speed 0.630 rad/s
+[INFO] [1795833051.426737056] [predictor]: reactive: 1.0 s ahead, error mean 80.4 mm, max 84.3 mm (49 checks); speed 0.624 rad/s
+[INFO] [1795833053.443853597] [predictor]: reactive: 1.0 s ahead, error mean 81.3 mm, max 84.4 mm (50 checks); speed 0.629 rad/s
+[INFO] [1795833055.512184057] [predictor]: reactive: 1.0 s ahead, error mean 81.8 mm, max 86.7 mm (50 checks); speed 0.624 rad/s
+[INFO] [1795833058.020973604] [predictor]: reactive: 1.0 s ahead, error mean 80.2 mm, max 84.4 mm (57 checks); speed 0.633 rad/s
+[INFO] [1795833060.050687693] [predictor]: reactive: 1.0 s ahead, error mean 80.0 mm, max 83.2 mm (29 checks); speed 0.627 rad/s
+[INFO] [1795833062.117893847] [predictor]: reactive: 1.0 s ahead, error mean 80.5 mm, max 90.8 mm (48 checks); speed 0.626 rad/s
+[INFO] [1795833064.149845451] [predictor]: reactive: 1.0 s ahead, error mean 81.3 mm, max 87.3 mm (50 checks); speed 0.625 rad/s
+[INFO] [1795833066.248428689] [predictor]: reactive: 1.0 s ahead, error mean 81.3 mm, max 87.1 mm (48 checks); speed 0.630 rad/s
+[INFO] [1795833068.276426659] [predictor]: reactive: 1.0 s ahead, error mean 81.0 mm, max 85.9 mm (44 checks); speed 0.628 rad/s
+[INFO] [1795833070.335394513] [predictor]: reactive: 1.0 s ahead, error mean 79.9 mm, max 84.3 mm (32 checks); speed 0.624 rad/s
+[INFO] [1795833072.380164415] [predictor]: reactive: 1.0 s ahead, error mean 80.9 mm, max 85.4 mm (51 checks); speed 0.629 rad/s
+[INFO] [1795833074.443978765] [predictor]: reactive: 1.0 s ahead, error mean 80.9 mm, max 83.3 mm (52 checks); speed 0.628 rad/s
+[INFO] [1795833076.504960250] [predictor]: reactive: 1.0 s ahead, error mean 81.0 mm, max 84.3 mm (48 checks); speed 0.626 rad/s
+[INFO] [1795833078.536697542] [predictor]: reactive: 1.0 s ahead, error mean 80.9 mm, max 85.8 mm (47 checks); speed 0.632 rad/s
+[INFO] [1795833080.590505773] [predictor]: reactive: 1.0 s ahead, error mean 80.5 mm, max 85.6 mm (36 checks); speed 0.629 rad/s
+[INFO] [1795833082.615692839] [predictor]: reactive: 1.0 s ahead, error mean 80.4 mm, max 82.3 mm (53 checks); speed 0.623 rad/s
+[INFO] [1795833084.654609875] [predictor]: reactive: 1.0 s ahead, error mean 81.3 mm, max 85.4 mm (54 checks); speed 0.626 rad/s
+[INFO] [1795833086.715507979] [predictor]: reactive: 1.0 s ahead, error mean 81.0 mm, max 85.9 mm (52 checks); speed 0.630 rad/s
+[INFO] [1795833088.791356734] [predictor]: reactive: 1.0 s ahead, error mean 81.0 mm, max 85.0 mm (45 checks); speed 0.629 rad/s
+[INFO] [1795833090.825834636] [predictor]: reactive: 1.0 s ahead, error mean 80.5 mm, max 82.1 mm (36 checks); speed 0.627 rad/s
+[INFO] [1795833092.857246690] [predictor]: reactive: 1.0 s ahead, error mean 80.6 mm, max 85.2 mm (53 checks); speed 0.626 rad/s
+[INFO] [1795833094.927520209] [predictor]: reactive: 1.0 s ahead, error mean 81.2 mm, max 87.1 mm (51 checks); speed 0.627 rad/s
+[INFO] [1795833096.963824066] [predictor]: reactive: 1.0 s ahead, error mean 80.7 mm, max 85.0 mm (52 checks); speed 0.627 rad/s
+[INFO] [1795833098.986001278] [predictor]: reactive: 1.0 s ahead, error mean 81.6 mm, max 86.0 mm (44 checks); speed 0.624 rad/s
+[INFO] [1795833101.025139640] [predictor]: reactive: 1.0 s ahead, error mean 80.7 mm, max 85.2 mm (35 checks); speed 0.627 rad/s
+Traceback (most recent call last):
+  File "/home/celeste/class_project/install/rotating_target/lib/rotating_target/predictor", line 33, in <module>
+    sys.exit(load_entry_point('rotating-target==0.0.0', 'console_scripts', 'predictor')())
+  File "/home/celeste/class_project/install/rotating_target/lib/python3.10/site-packages/rotating_target/predictor.py", line 374, in main
+    rclpy.spin_once(node, timeout_sec=0.5)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 208, in spin_once
+    executor.spin_once(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 812, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 801, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 784, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 685, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException
+[ros2run]: Process exited with failure 1

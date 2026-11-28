@@ -1,0 +1,25 @@
+[INFO] [1795655821.037184330] [capture]: Arm now at joints [ 0.004  0.177 -1.72  -0.    -1.244  0.004]; working out the hover and grasp poses...
+[INFO] [1795655833.446490871] [capture]: Meeting point [0.37 0.   0.2 ]; IK check: hover 0.00 mm, grasp 0.00 mm off. Hover joints [ 0.004  0.177 -1.72   0.    -1.244  0.004]; grasp joints [ 0.004  0.295 -1.923 -0.    -0.923  0.004]
+[INFO] [1795655833.455596567] [capture]: Moving to hover over 3.0 s
+[INFO] [1795655833.456892473] [capture]: Arm is at the hover pose.
+[INFO] [1795655833.457237257] [capture]: Trial 1/10: waiting for the handle
+[INFO] [1795655835.570952812] [capture]: Trial 1: error 259.9 mm (along +1.8, across -259.9, vertical -0.0) -> missed
+[INFO] [1795655837.176699676] [capture]: Trial 2/10: waiting for the handle
+[INFO] [1795655849.828821736] [capture]: Trial 2: error 230.5 mm (along -106.4, across -204.5, vertical -0.0) -> missed
+[INFO] [1795655851.435972540] [capture]: Trial 3/10: waiting for the handle
+[INFO] [1795655865.208134399] [capture]: Trial 3: error 248.1 mm (along -73.9, across -236.8, vertical -0.0) -> missed
+[INFO] [1795655866.812549690] [capture]: Trial 4/10: waiting for the handle
+[INFO] [1795655870.428290123] [capture]: Trial 4: error 256.0 mm (along -43.8, across -252.2, vertical -0.0) -> missed
+[INFO] [1795655872.034478083] [capture]: Trial 5/10: waiting for the handle
+[INFO] [1795655892.824112693] [capture]: Trial 5: error 70.4 mm (along +67.8, across -18.9, vertical -0.0) -> missed
+[INFO] [1795655894.430103690] [capture]: Trial 6/10: waiting for the handle
+[INFO] [1795655900.259878460] [capture]: Trial 6: error 245.3 mm (along -80.9, across -231.6, vertical -0.0) -> missed
+[INFO] [1795655901.863112813] [capture]: Trial 7/10: waiting for the handle
+[INFO] [1795655910.400592455] [capture]: Trial 7: error 249.1 mm (along -70.5, across -239.0, vertical -0.0) -> missed
+[INFO] [1795655912.011503111] [capture]: Trial 8/10: waiting for the handle
+[INFO] [1795655920.150697745] [capture]: Trial 8: error 233.0 mm (along -103.1, across -209.0, vertical -0.0) -> missed
+[INFO] [1795655921.754806778] [capture]: Trial 9/10: waiting for the handle
+[INFO] [1795655935.208610903] [capture]: Trial 9: error 233.5 mm (along -102.4, across -209.9, vertical -0.0) -> missed
+[INFO] [1795655936.813360903] [capture]: Trial 10/10: waiting for the handle
+[INFO] [1795655939.324258478] [capture]: Trial 10: error 136.6 mm (along -116.3, across -71.7, vertical -0.0) -> missed
+[INFO] [1795655940.932226265] [capture]: All trials done.

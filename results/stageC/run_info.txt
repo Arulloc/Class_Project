@@ -1,0 +1,21 @@
+date: 2026-11-25T19:39:43-05:00
+branch: feature/celeste/prediction
+commit: 372da6d
+uncommitted changes: 1 files
+methods: reactive last_two average kalman   periods: 20 10 5 3   trials: 10   input: camera
+camera pose: x=0.75 y=0.0 z=0.75 pitch=1.107 yaw=3.1416   kf_r=0.00024
+camera topics: /virtual_camera/virtual_camera_sensor/image_raw  /virtual_camera/virtual_camera_sensor/camera_info
+date: 2026-11-25T20:15:28-05:00
+branch: feature/celeste/prediction
+commit: 068f4de
+uncommitted changes: 1 files
+methods: reactive last_two average kalman   periods: 5 3   trials: 10   input: camera
+camera pose: x=0.75 y=0.0 z=0.75 pitch=1.107 yaw=3.1416   kf_r=0.00024
+camera topics: /virtual_camera/virtual_camera_sensor/image_raw  /virtual_camera/virtual_camera_sensor/camera_info
+date: 2026-11-25T20:44:07-05:00
+branch: feature/celeste/prediction
+commit: 068f4de
+uncommitted changes: 2 files
+methods: reactive kalman   periods: 10   trials: 3   input: camera
+camera pose: x=0.75 y=0.0 z=0.75 pitch=1.107 yaw=3.1416   kf_r=0.00024
+camera topics: /virtual_camera/virtual_camera_sensor/image_raw  /virtual_camera/virtual_camera_sensor/camera_info

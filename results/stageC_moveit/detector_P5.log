@@ -1,0 +1,83 @@
+[INFO] [1795833530.262481461] [tag_detector]: images 2, tag found in 2 (100%), handle published 0; finding tag orientation (0/30)
+[INFO] [1795833531.456531324] [tag_detector]: Tag orientation on the cube: handle is 90 deg from the tag x-axis (measured 94.2 deg, rounded to 90)
+[INFO] [1795833533.579469077] [tag_detector]: images 101, tag found in 80 (79%), handle published 49; error vs ground truth mean 10.6 mm, largest 17.0 mm; processing delay -27 ms
+[INFO] [1795833538.660423706] [tag_detector]: images 251, tag found in 204 (81%), handle published 173; error vs ground truth mean 10.0 mm, largest 17.0 mm; processing delay -31 ms
+[INFO] [1795833543.697355895] [tag_detector]: images 402, tag found in 355 (88%), handle published 324; error vs ground truth mean 9.9 mm, largest 17.1 mm; processing delay -32 ms
+[INFO] [1795833548.744070235] [tag_detector]: images 551, tag found in 465 (84%), handle published 434; error vs ground truth mean 9.8 mm, largest 17.1 mm; processing delay -32 ms
+[INFO] [1795833553.785729589] [tag_detector]: images 701, tag found in 554 (79%), handle published 523; error vs ground truth mean 9.8 mm, largest 17.1 mm; processing delay -30 ms
+[INFO] [1795833558.840458062] [tag_detector]: images 851, tag found in 636 (75%), handle published 605; error vs ground truth mean 9.7 mm, largest 17.1 mm; processing delay -29 ms
+[INFO] [1795833563.912636955] [tag_detector]: images 1001, tag found in 728 (73%), handle published 697; error vs ground truth mean 9.9 mm, largest 17.0 mm; processing delay -28 ms
+[INFO] [1795833568.990713300] [tag_detector]: images 1152, tag found in 879 (76%), handle published 848; error vs ground truth mean 9.9 mm, largest 17.2 mm; processing delay -29 ms
+[INFO] [1795833574.046970468] [tag_detector]: images 1301, tag found in 1017 (78%), handle published 986; error vs ground truth mean 9.8 mm, largest 17.2 mm; processing delay -29 ms
+[INFO] [1795833579.102752167] [tag_detector]: images 1451, tag found in 1102 (76%), handle published 1071; error vs ground truth mean 9.9 mm, largest 17.2 mm; processing delay -29 ms
+[INFO] [1795833584.162914367] [tag_detector]: images 1601, tag found in 1200 (75%), handle published 1169; error vs ground truth mean 9.9 mm, largest 17.2 mm; processing delay -27 ms
+[INFO] [1795833589.225701310] [tag_detector]: images 1751, tag found in 1309 (75%), handle published 1278; error vs ground truth mean 9.9 mm, largest 17.2 mm; processing delay -28 ms
+[INFO] [1795833594.304767720] [tag_detector]: images 1901, tag found in 1420 (75%), handle published 1389; error vs ground truth mean 9.8 mm, largest 17.0 mm; processing delay -27 ms
+[INFO] [1795833599.383961957] [tag_detector]: images 2051, tag found in 1535 (75%), handle published 1504; error vs ground truth mean 9.7 mm, largest 17.2 mm; processing delay -28 ms
+[INFO] [1795833604.465980223] [tag_detector]: images 2201, tag found in 1638 (74%), handle published 1607; error vs ground truth mean 9.8 mm, largest 17.2 mm; processing delay -28 ms
+[INFO] [1795833609.532083958] [tag_detector]: images 2351, tag found in 1747 (74%), handle published 1716; error vs ground truth mean 9.7 mm, largest 17.2 mm; processing delay -29 ms
+[INFO] [1795833614.609429476] [tag_detector]: images 2501, tag found in 1853 (74%), handle published 1822; error vs ground truth mean 9.7 mm, largest 17.0 mm; processing delay -30 ms
+[INFO] [1795833619.687633390] [tag_detector]: images 2651, tag found in 1963 (74%), handle published 1932; error vs ground truth mean 9.7 mm, largest 17.0 mm; processing delay -30 ms
+[INFO] [1795833624.755134217] [tag_detector]: images 2801, tag found in 2074 (74%), handle published 2043; error vs ground truth mean 9.7 mm, largest 18.0 mm; processing delay -30 ms
+[INFO] [1795833629.883704929] [tag_detector]: images 2951, tag found in 2195 (74%), handle published 2164; error vs ground truth mean 9.9 mm, largest 18.0 mm; processing delay -29 ms
+[INFO] [1795833634.956501890] [tag_detector]: images 3101, tag found in 2312 (75%), handle published 2281; error vs ground truth mean 10.0 mm, largest 18.0 mm; processing delay -28 ms
+[INFO] [1795833640.014408160] [tag_detector]: images 3251, tag found in 2427 (75%), handle published 2396; error vs ground truth mean 9.9 mm, largest 17.2 mm; processing delay -28 ms
+[INFO] [1795833645.064780091] [tag_detector]: images 3401, tag found in 2527 (74%), handle published 2496; error vs ground truth mean 9.8 mm, largest 17.2 mm; processing delay -28 ms
+[INFO] [1795833650.117458304] [tag_detector]: images 3551, tag found in 2620 (74%), handle published 2589; error vs ground truth mean 9.9 mm, largest 18.7 mm; processing delay -28 ms
+[INFO] [1795833655.174041258] [tag_detector]: images 3701, tag found in 2718 (73%), handle published 2687; error vs ground truth mean 9.8 mm, largest 18.7 mm; processing delay -28 ms
+[INFO] [1795833660.242851112] [tag_detector]: images 3851, tag found in 2806 (73%), handle published 2775; error vs ground truth mean 9.8 mm, largest 18.7 mm; processing delay -28 ms
+[INFO] [1795833665.306879161] [tag_detector]: images 4002, tag found in 2898 (72%), handle published 2867; error vs ground truth mean 9.7 mm, largest 17.2 mm; processing delay -29 ms
+[INFO] [1795833670.379414031] [tag_detector]: images 4151, tag found in 2985 (72%), handle published 2954; error vs ground truth mean 9.9 mm, largest 17.2 mm; processing delay -28 ms
+[INFO] [1795833675.452862354] [tag_detector]: images 4301, tag found in 3071 (71%), handle published 3040; error vs ground truth mean 9.8 mm, largest 17.2 mm; processing delay -28 ms
+[INFO] [1795833680.507078869] [tag_detector]: images 4451, tag found in 3160 (71%), handle published 3129; error vs ground truth mean 9.7 mm, largest 18.3 mm; processing delay -28 ms
+[INFO] [1795833685.569363945] [tag_detector]: images 4602, tag found in 3249 (71%), handle published 3218; error vs ground truth mean 9.6 mm, largest 18.8 mm; processing delay -30 ms
+[INFO] [1795833690.662905400] [tag_detector]: images 4751, tag found in 3335 (70%), handle published 3304; error vs ground truth mean 9.7 mm, largest 18.8 mm; processing delay -30 ms
+[INFO] [1795833695.737635204] [tag_detector]: images 4901, tag found in 3422 (70%), handle published 3391; error vs ground truth mean 9.7 mm, largest 18.8 mm; processing delay -30 ms
+[INFO] [1795833700.794067234] [tag_detector]: images 5051, tag found in 3514 (70%), handle published 3483; error vs ground truth mean 9.8 mm, largest 18.8 mm; processing delay -28 ms
+[INFO] [1795833705.844158837] [tag_detector]: images 5201, tag found in 3601 (69%), handle published 3570; error vs ground truth mean 9.7 mm, largest 17.2 mm; processing delay -29 ms
+[INFO] [1795833710.917874593] [tag_detector]: images 5351, tag found in 3690 (69%), handle published 3659; error vs ground truth mean 9.8 mm, largest 17.4 mm; processing delay -29 ms
+[INFO] [1795833716.044858462] [tag_detector]: images 5501, tag found in 3777 (69%), handle published 3746; error vs ground truth mean 9.8 mm, largest 17.4 mm; processing delay -30 ms
+[INFO] [1795833721.081337115] [tag_detector]: images 5651, tag found in 3861 (68%), handle published 3830; error vs ground truth mean 9.7 mm, largest 17.4 mm; processing delay -30 ms
+[INFO] [1795833726.128541827] [tag_detector]: images 5801, tag found in 3944 (68%), handle published 3913; error vs ground truth mean 9.8 mm, largest 17.4 mm; processing delay -30 ms
+[INFO] [1795833731.173709226] [tag_detector]: images 5951, tag found in 4032 (68%), handle published 4001; error vs ground truth mean 9.8 mm, largest 17.4 mm; processing delay -30 ms
+[INFO] [1795833736.240173624] [tag_detector]: images 6101, tag found in 4129 (68%), handle published 4098; error vs ground truth mean 9.8 mm, largest 18.1 mm; processing delay -29 ms
+[INFO] [1795833741.303228798] [tag_detector]: images 6251, tag found in 4229 (68%), handle published 4198; error vs ground truth mean 9.7 mm, largest 18.1 mm; processing delay -29 ms
+[INFO] [1795833746.381342859] [tag_detector]: images 6401, tag found in 4331 (68%), handle published 4300; error vs ground truth mean 9.7 mm, largest 18.1 mm; processing delay -28 ms
+[INFO] [1795833751.444408723] [tag_detector]: images 6551, tag found in 4433 (68%), handle published 4402; error vs ground truth mean 9.8 mm, largest 18.1 mm; processing delay -27 ms
+[INFO] [1795833756.509805884] [tag_detector]: images 6701, tag found in 4535 (68%), handle published 4504; error vs ground truth mean 9.8 mm, largest 20.2 mm; processing delay -28 ms
+[INFO] [1795833761.578404285] [tag_detector]: images 6851, tag found in 4640 (68%), handle published 4609; error vs ground truth mean 9.9 mm, largest 20.2 mm; processing delay -27 ms
+[INFO] [1795833766.644182076] [tag_detector]: images 7001, tag found in 4746 (68%), handle published 4715; error vs ground truth mean 9.9 mm, largest 20.2 mm; processing delay -28 ms
+[INFO] [1795833771.811314474] [tag_detector]: images 7154, tag found in 4853 (68%), handle published 4822; error vs ground truth mean 9.9 mm, largest 20.2 mm; processing delay -28 ms
+[INFO] [1795833776.779074816] [tag_detector]: images 7301, tag found in 4961 (68%), handle published 4930; error vs ground truth mean 9.8 mm, largest 20.2 mm; processing delay -29 ms
+[INFO] [1795833781.845495308] [tag_detector]: images 7452, tag found in 5072 (68%), handle published 5041; error vs ground truth mean 9.8 mm, largest 20.2 mm; processing delay -29 ms
+[INFO] [1795833786.888843880] [tag_detector]: images 7602, tag found in 5188 (68%), handle published 5157; error vs ground truth mean 9.8 mm, largest 19.4 mm; processing delay -28 ms
+[INFO] [1795833791.934398413] [tag_detector]: images 7751, tag found in 5282 (68%), handle published 5251; error vs ground truth mean 9.8 mm, largest 19.4 mm; processing delay -28 ms
+[INFO] [1795833796.984233007] [tag_detector]: images 7901, tag found in 5365 (68%), handle published 5334; error vs ground truth mean 9.7 mm, largest 17.6 mm; processing delay -27 ms
+[INFO] [1795833802.035947476] [tag_detector]: images 8051, tag found in 5451 (68%), handle published 5420; error vs ground truth mean 9.7 mm, largest 17.6 mm; processing delay -28 ms
+[INFO] [1795833807.094946090] [tag_detector]: images 8201, tag found in 5540 (68%), handle published 5509; error vs ground truth mean 9.9 mm, largest 19.3 mm; processing delay -28 ms
+[INFO] [1795833812.168088865] [tag_detector]: images 8351, tag found in 5652 (68%), handle published 5621; error vs ground truth mean 9.8 mm, largest 19.3 mm; processing delay -29 ms
+[INFO] [1795833817.237126055] [tag_detector]: images 8501, tag found in 5766 (68%), handle published 5735; error vs ground truth mean 9.8 mm, largest 19.3 mm; processing delay -28 ms
+[INFO] [1795833822.304619093] [tag_detector]: images 8651, tag found in 5881 (68%), handle published 5850; error vs ground truth mean 10.0 mm, largest 17.1 mm; processing delay -27 ms
+[INFO] [1795833827.381913461] [tag_detector]: images 8801, tag found in 5999 (68%), handle published 5968; error vs ground truth mean 10.0 mm, largest 21.0 mm; processing delay -27 ms
+[INFO] [1795833832.457130614] [tag_detector]: images 8951, tag found in 6109 (68%), handle published 6078; error vs ground truth mean 10.0 mm, largest 21.0 mm; processing delay -28 ms
+[INFO] [1795833837.522508210] [tag_detector]: images 9101, tag found in 6225 (68%), handle published 6194; error vs ground truth mean 10.0 mm, largest 21.0 mm; processing delay -27 ms
+[INFO] [1795833842.577824242] [tag_detector]: images 9251, tag found in 6344 (69%), handle published 6313; error vs ground truth mean 9.9 mm, largest 17.9 mm; processing delay -27 ms
+[INFO] [1795833847.649664590] [tag_detector]: images 9401, tag found in 6454 (69%), handle published 6423; error vs ground truth mean 9.9 mm, largest 17.9 mm; processing delay -28 ms
+[INFO] [1795833852.721289121] [tag_detector]: images 9551, tag found in 6569 (69%), handle published 6538; error vs ground truth mean 9.8 mm, largest 19.0 mm; processing delay -30 ms
+[INFO] [1795833857.796524396] [tag_detector]: images 9701, tag found in 6686 (69%), handle published 6655; error vs ground truth mean 9.9 mm, largest 19.0 mm; processing delay -30 ms
+Traceback (most recent call last):
+  File "/home/celeste/class_project/scripts/tag_detector.py", line 280, in <module>
+    main()
+  File "/home/celeste/class_project/scripts/tag_detector.py", line 269, in main
+    rclpy.spin(node)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 229, in spin
+    executor.spin_once()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 812, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 801, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 784, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 685, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException

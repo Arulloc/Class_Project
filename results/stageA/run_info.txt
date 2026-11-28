@@ -1,0 +1,19 @@
+date: 2026-11-24T20:19:08-05:00
+branch: feature/celeste/prediction
+commit: 9d6b8a9
+uncommitted changes: 2 files
+ROS: humble   run_time: 60 s   warmup: 5 s
+condition: 20 1.0 0 0 true
+condition: 10 1.0 0 0 true
+condition: 5 1.0 0 0 true
+condition: 3 1.0 0 0 true
+condition: 10 0.5 0 0 true
+condition: 10 2.0 0 0 true
+condition: 10 1.0 0.002 0 true
+condition: 10 1.0 0.005 0 true
+condition: 10 1.0 0 0.1 true
+condition: 10 1.0 0 0.2 true
+condition: 10 1.0 0 0.4 true
+condition: 10 1.0 0 0.1 false
+condition: 10 1.0 0 0.2 false
+condition: 10 1.0 0 0.4 false

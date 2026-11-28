@@ -1,0 +1,6 @@
+[INFO] [1795831998.739066504] [spawn_entity]: Spawn Entity started
+[INFO] [1795831998.739529204] [spawn_entity]: Loading entity XML from file /home/celeste/class_project/models/standalone_camera.urdf
+[INFO] [1795831998.742237204] [spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[INFO] [1795831998.742697904] [spawn_entity]: Waiting for service /spawn_entity
+[INFO] [1795831998.748263905] [spawn_entity]: Calling service /spawn_entity
+[INFO] [1795831998.906792913] [spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [ext_camera]

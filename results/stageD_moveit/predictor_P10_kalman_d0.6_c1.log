@@ -1,0 +1,81 @@
+[INFO] [1795838301.545064618] [predictor]: Predictor: method=kalman, horizon=1.0 s, noise=0.0 mm, delay=0.6 s, compensate=True
+[INFO] [1795838308.780401710] [predictor]: kalman: 1.0 s ahead, error mean 8.0 mm, max 19.3 mm (6 checks); speed 0.634 rad/s
+[INFO] [1795838314.531555544] [predictor]: kalman: 1.0 s ahead, error mean 5.4 mm, max 16.9 mm (32 checks); speed 0.632 rad/s
+[INFO] [1795838316.551869465] [predictor]: kalman: 1.0 s ahead, error mean 8.8 mm, max 22.6 mm (19 checks); speed 0.631 rad/s
+[INFO] [1795838318.593384634] [predictor]: kalman: 1.0 s ahead, error mean 3.6 mm, max 13.0 mm (34 checks); speed 0.629 rad/s
+[INFO] [1795838320.649865527] [predictor]: kalman: 1.0 s ahead, error mean 3.8 mm, max 11.0 mm (46 checks); speed 0.630 rad/s
+[INFO] [1795838322.679439845] [predictor]: kalman: 1.0 s ahead, error mean 4.4 mm, max 28.1 mm (42 checks); speed 0.627 rad/s
+[INFO] [1795838324.705995651] [predictor]: kalman: 1.0 s ahead, error mean 7.5 mm, max 66.8 mm (44 checks); speed 0.633 rad/s
+[INFO] [1795838326.758112485] [predictor]: kalman: 1.0 s ahead, error mean 4.5 mm, max 11.1 mm (48 checks); speed 0.631 rad/s
+[INFO] [1795838328.798468283] [predictor]: kalman: 1.0 s ahead, error mean 3.9 mm, max 10.2 mm (48 checks); speed 0.629 rad/s
+[INFO] [1795838330.854304029] [predictor]: kalman: 1.0 s ahead, error mean 4.1 mm, max 11.2 mm (44 checks); speed 0.634 rad/s
+[INFO] [1795838332.990129979] [predictor]: kalman: 1.0 s ahead, error mean 4.4 mm, max 27.6 mm (48 checks); speed 0.630 rad/s
+[INFO] [1795838335.028686710] [predictor]: kalman: 1.0 s ahead, error mean 4.6 mm, max 16.2 mm (39 checks); speed 0.622 rad/s
+[INFO] [1795838337.060579131] [predictor]: kalman: 1.0 s ahead, error mean 10.1 mm, max 55.2 mm (59 checks); speed 0.630 rad/s
+[INFO] [1795838339.101397158] [predictor]: kalman: 1.0 s ahead, error mean 2.9 mm, max 8.5 mm (60 checks); speed 0.626 rad/s
+[INFO] [1795838341.170499230] [predictor]: kalman: 1.0 s ahead, error mean 3.8 mm, max 10.2 mm (47 checks); speed 0.633 rad/s
+[INFO] [1795838343.237835303] [predictor]: kalman: 1.0 s ahead, error mean 3.4 mm, max 8.0 mm (61 checks); speed 0.628 rad/s
+[INFO] [1795838345.276902800] [predictor]: kalman: 1.0 s ahead, error mean 3.5 mm, max 11.4 mm (56 checks); speed 0.627 rad/s
+[INFO] [1795838347.334622021] [predictor]: kalman: 1.0 s ahead, error mean 4.5 mm, max 9.5 mm (44 checks); speed 0.628 rad/s
+[INFO] [1795838349.384222419] [predictor]: kalman: 1.0 s ahead, error mean 3.7 mm, max 10.0 mm (51 checks); speed 0.628 rad/s
+[INFO] [1795838351.417950882] [predictor]: kalman: 1.0 s ahead, error mean 3.5 mm, max 12.0 mm (46 checks); speed 0.624 rad/s
+[INFO] [1795838353.449114213] [predictor]: kalman: 1.0 s ahead, error mean 4.2 mm, max 15.5 mm (43 checks); speed 0.630 rad/s
+[INFO] [1795838355.617857228] [predictor]: kalman: 1.0 s ahead, error mean 4.3 mm, max 15.3 mm (46 checks); speed 0.632 rad/s
+[INFO] [1795838357.726914241] [predictor]: kalman: 1.0 s ahead, error mean 4.7 mm, max 11.5 mm (43 checks); speed 0.629 rad/s
+[INFO] [1795838359.758014281] [predictor]: kalman: 1.0 s ahead, error mean 4.6 mm, max 11.4 mm (46 checks); speed 0.626 rad/s
+[INFO] [1795838361.839274925] [predictor]: kalman: 1.0 s ahead, error mean 3.8 mm, max 20.0 mm (36 checks); speed 0.629 rad/s
+[INFO] [1795838363.914066792] [predictor]: kalman: 1.0 s ahead, error mean 4.8 mm, max 10.9 mm (34 checks); speed 0.630 rad/s
+[INFO] [1795838365.948210098] [predictor]: kalman: 1.0 s ahead, error mean 4.7 mm, max 13.9 mm (33 checks); speed 0.632 rad/s
+[INFO] [1795838367.981347434] [predictor]: kalman: 1.0 s ahead, error mean 4.3 mm, max 12.5 mm (34 checks); speed 0.632 rad/s
+[INFO] [1795838370.019379329] [predictor]: kalman: 1.0 s ahead, error mean 4.8 mm, max 15.4 mm (44 checks); speed 0.625 rad/s
+[INFO] [1795838372.086853994] [predictor]: kalman: 1.0 s ahead, error mean 5.2 mm, max 24.6 mm (35 checks); speed 0.631 rad/s
+[INFO] [1795838374.275653040] [predictor]: kalman: 1.0 s ahead, error mean 3.5 mm, max 9.2 mm (41 checks); speed 0.632 rad/s
+[INFO] [1795838376.299731723] [predictor]: kalman: 1.0 s ahead, error mean 5.9 mm, max 16.3 mm (34 checks); speed 0.628 rad/s
+[INFO] [1795838378.336644762] [predictor]: kalman: 1.0 s ahead, error mean 5.9 mm, max 16.0 mm (36 checks); speed 0.629 rad/s
+[INFO] [1795838380.402785870] [predictor]: kalman: 1.0 s ahead, error mean 4.0 mm, max 13.1 mm (50 checks); speed 0.633 rad/s
+[INFO] [1795838382.432681881] [predictor]: kalman: 1.0 s ahead, error mean 4.6 mm, max 19.5 mm (47 checks); speed 0.628 rad/s
+[INFO] [1795838384.497271478] [predictor]: kalman: 1.0 s ahead, error mean 4.5 mm, max 12.7 mm (44 checks); speed 0.625 rad/s
+[INFO] [1795838386.531650606] [predictor]: kalman: 1.0 s ahead, error mean 4.6 mm, max 14.3 mm (44 checks); speed 0.628 rad/s
+[INFO] [1795838388.585484307] [predictor]: kalman: 1.0 s ahead, error mean 3.6 mm, max 13.9 mm (41 checks); speed 0.628 rad/s
+[INFO] [1795838390.631230970] [predictor]: kalman: 1.0 s ahead, error mean 3.0 mm, max 12.6 mm (52 checks); speed 0.628 rad/s
+[INFO] [1795838392.659547129] [predictor]: kalman: 1.0 s ahead, error mean 4.1 mm, max 14.0 mm (54 checks); speed 0.627 rad/s
+[INFO] [1795838394.696637442] [predictor]: kalman: 1.0 s ahead, error mean 4.8 mm, max 13.3 mm (54 checks); speed 0.624 rad/s
+[INFO] [1795838396.730599534] [predictor]: kalman: 1.0 s ahead, error mean 4.2 mm, max 15.2 mm (54 checks); speed 0.630 rad/s
+[INFO] [1795838398.761648211] [predictor]: kalman: 1.0 s ahead, error mean 3.7 mm, max 12.0 mm (49 checks); speed 0.625 rad/s
+[INFO] [1795838400.840331299] [predictor]: kalman: 1.0 s ahead, error mean 3.8 mm, max 13.2 mm (40 checks); speed 0.634 rad/s
+[INFO] [1795838402.905297788] [predictor]: kalman: 1.0 s ahead, error mean 3.7 mm, max 14.9 mm (36 checks); speed 0.625 rad/s
+[INFO] [1795838404.932154831] [predictor]: kalman: 1.0 s ahead, error mean 4.3 mm, max 13.8 mm (33 checks); speed 0.630 rad/s
+[INFO] [1795838406.967148773] [predictor]: kalman: 1.0 s ahead, error mean 4.8 mm, max 12.0 mm (34 checks); speed 0.627 rad/s
+[INFO] [1795838408.997493291] [predictor]: kalman: 1.0 s ahead, error mean 4.5 mm, max 16.3 mm (39 checks); speed 0.629 rad/s
+[INFO] [1795838411.024255850] [predictor]: kalman: 1.0 s ahead, error mean 3.4 mm, max 10.4 mm (51 checks); speed 0.626 rad/s
+[INFO] [1795838413.068665238] [predictor]: kalman: 1.0 s ahead, error mean 4.5 mm, max 11.4 mm (48 checks); speed 0.629 rad/s
+[INFO] [1795838415.105905352] [predictor]: kalman: 1.0 s ahead, error mean 4.1 mm, max 10.5 mm (51 checks); speed 0.629 rad/s
+[INFO] [1795838417.142209243] [predictor]: kalman: 1.0 s ahead, error mean 4.1 mm, max 11.0 mm (51 checks); speed 0.633 rad/s
+[INFO] [1795838419.278753370] [predictor]: kalman: 1.0 s ahead, error mean 4.0 mm, max 11.4 mm (49 checks); speed 0.630 rad/s
+[INFO] [1795838421.348118455] [predictor]: kalman: 1.0 s ahead, error mean 4.3 mm, max 10.9 mm (46 checks); speed 0.624 rad/s
+[INFO] [1795838423.391051911] [predictor]: kalman: 1.0 s ahead, error mean 4.4 mm, max 18.1 mm (44 checks); speed 0.624 rad/s
+[INFO] [1795838425.434696111] [predictor]: kalman: 1.0 s ahead, error mean 5.0 mm, max 14.4 mm (39 checks); speed 0.627 rad/s
+[INFO] [1795838427.480095231] [predictor]: kalman: 1.0 s ahead, error mean 3.6 mm, max 8.4 mm (36 checks); speed 0.633 rad/s
+[INFO] [1795838429.540249571] [predictor]: kalman: 1.0 s ahead, error mean 5.7 mm, max 20.4 mm (42 checks); speed 0.630 rad/s
+[INFO] [1795838431.613805263] [predictor]: kalman: 1.0 s ahead, error mean 5.2 mm, max 17.9 mm (39 checks); speed 0.626 rad/s
+[INFO] [1795838433.687180534] [predictor]: kalman: 1.0 s ahead, error mean 4.2 mm, max 12.0 mm (41 checks); speed 0.631 rad/s
+[INFO] [1795838435.816976294] [predictor]: kalman: 1.0 s ahead, error mean 3.9 mm, max 11.3 mm (38 checks); speed 0.626 rad/s
+[INFO] [1795838437.854204236] [predictor]: kalman: 1.0 s ahead, error mean 5.9 mm, max 14.0 mm (34 checks); speed 0.621 rad/s
+[INFO] [1795838439.895446395] [predictor]: kalman: 1.0 s ahead, error mean 4.2 mm, max 12.7 mm (37 checks); speed 0.628 rad/s
+Traceback (most recent call last):
+  File "/home/celeste/class_project/install/rotating_target/lib/rotating_target/predictor", line 33, in <module>
+    sys.exit(load_entry_point('rotating-target==0.0.0', 'console_scripts', 'predictor')())
+  File "/home/celeste/class_project/install/rotating_target/lib/python3.10/site-packages/rotating_target/predictor.py", line 378, in main
+    rclpy.spin_once(node, timeout_sec=0.5)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 208, in spin_once
+    executor.spin_once(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 812, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 801, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 784, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 685, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException
+[ros2run]: Process exited with failure 1

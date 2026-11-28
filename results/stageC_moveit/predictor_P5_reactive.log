@@ -1,0 +1,60 @@
+[INFO] [1795833532.714650593] [predictor]: Predictor: method=reactive, horizon=1.0 s, noise=0.0 mm, delay=0.0 s, compensate=True
+[INFO] [1795833538.803036404] [predictor]: reactive: 1.0 s ahead, error mean 152.0 mm, max 152.0 mm (1 checks); speed 1.258 rad/s
+[INFO] [1795833540.815661778] [predictor]: reactive: 1.0 s ahead, error mean 151.4 mm, max 153.1 mm (60 checks); speed 1.268 rad/s
+[INFO] [1795833542.862897149] [predictor]: reactive: 1.0 s ahead, error mean 150.1 mm, max 152.0 mm (61 checks); speed 1.248 rad/s
+[INFO] [1795833544.870423505] [predictor]: reactive: 1.0 s ahead, error mean 152.0 mm, max 153.9 mm (60 checks); speed 1.251 rad/s
+[INFO] [1795833546.933156838] [predictor]: reactive: 1.0 s ahead, error mean 149.7 mm, max 157.8 mm (56 checks); speed 1.255 rad/s
+[INFO] [1795833548.987763476] [predictor]: reactive: 1.0 s ahead, error mean 151.7 mm, max 159.2 mm (39 checks); speed 1.267 rad/s
+[INFO] [1795833551.004033729] [predictor]: reactive: 1.0 s ahead, error mean 151.6 mm, max 161.5 mm (32 checks); speed 1.257 rad/s
+[INFO] [1795833553.020193103] [predictor]: reactive: 1.0 s ahead, error mean 150.1 mm, max 159.3 mm (37 checks); speed 1.261 rad/s
+[INFO] [1795833555.068274538] [predictor]: reactive: 1.0 s ahead, error mean 151.1 mm, max 159.6 mm (37 checks); speed 1.252 rad/s
+[INFO] [1795833557.202863377] [predictor]: reactive: 1.0 s ahead, error mean 150.0 mm, max 157.1 mm (34 checks); speed 1.252 rad/s
+[INFO] [1795833559.263560539] [predictor]: reactive: 1.0 s ahead, error mean 150.4 mm, max 157.4 mm (35 checks); speed 1.255 rad/s
+[INFO] [1795833561.388671534] [predictor]: reactive: 1.0 s ahead, error mean 150.6 mm, max 157.7 mm (32 checks); speed 1.248 rad/s
+[INFO] [1795833563.447610293] [predictor]: reactive: 1.0 s ahead, error mean 149.9 mm, max 158.9 mm (33 checks); speed 1.261 rad/s
+[INFO] [1795833565.469035270] [predictor]: reactive: 1.0 s ahead, error mean 151.8 mm, max 153.5 mm (50 checks); speed 1.261 rad/s
+[INFO] [1795833567.537978074] [predictor]: reactive: 1.0 s ahead, error mean 150.0 mm, max 151.7 mm (61 checks); speed 1.261 rad/s
+[INFO] [1795833569.563356677] [predictor]: reactive: 1.0 s ahead, error mean 151.5 mm, max 152.8 mm (60 checks); speed 1.261 rad/s
+[INFO] [1795833571.588446342] [predictor]: reactive: 1.0 s ahead, error mean 151.1 mm, max 153.1 mm (60 checks); speed 1.249 rad/s
+[INFO] [1795833573.655844831] [predictor]: reactive: 1.0 s ahead, error mean 150.5 mm, max 157.9 mm (60 checks); speed 1.259 rad/s
+[INFO] [1795833575.670946236] [predictor]: reactive: 1.0 s ahead, error mean 150.9 mm, max 159.6 mm (45 checks); speed 1.259 rad/s
+[INFO] [1795833577.693199450] [predictor]: reactive: 1.0 s ahead, error mean 149.2 mm, max 157.4 mm (23 checks); speed 1.260 rad/s
+[INFO] [1795833579.745944323] [predictor]: reactive: 1.0 s ahead, error mean 151.2 mm, max 160.8 mm (41 checks); speed 1.267 rad/s
+[INFO] [1795833582.005782538] [predictor]: reactive: 1.0 s ahead, error mean 151.4 mm, max 159.2 mm (47 checks); speed 1.255 rad/s
+[INFO] [1795833584.033319852] [predictor]: reactive: 1.0 s ahead, error mean 151.0 mm, max 158.7 mm (28 checks); speed 1.257 rad/s
+[INFO] [1795833586.068298108] [predictor]: reactive: 1.0 s ahead, error mean 151.3 mm, max 157.2 mm (54 checks); speed 1.261 rad/s
+[INFO] [1795833588.088284923] [predictor]: reactive: 1.0 s ahead, error mean 150.5 mm, max 157.7 mm (29 checks); speed 1.261 rad/s
+[INFO] [1795833590.112295460] [predictor]: reactive: 1.0 s ahead, error mean 151.9 mm, max 157.9 mm (53 checks); speed 1.257 rad/s
+[INFO] [1795833592.146785417] [predictor]: reactive: 1.0 s ahead, error mean 151.1 mm, max 158.6 mm (56 checks); speed 1.252 rad/s
+[INFO] [1795833594.277127314] [predictor]: reactive: 1.0 s ahead, error mean 151.1 mm, max 156.3 mm (32 checks); speed 1.255 rad/s
+[INFO] [1795833596.353815523] [predictor]: reactive: 1.0 s ahead, error mean 151.6 mm, max 159.5 mm (53 checks); speed 1.249 rad/s
+[INFO] [1795833598.385915944] [predictor]: reactive: 1.0 s ahead, error mean 149.7 mm, max 155.1 mm (34 checks); speed 1.255 rad/s
+[INFO] [1795833600.442681389] [predictor]: reactive: 1.0 s ahead, error mean 152.0 mm, max 158.4 mm (55 checks); speed 1.257 rad/s
+[INFO] [1795833602.475381201] [predictor]: reactive: 1.0 s ahead, error mean 150.7 mm, max 157.9 mm (53 checks); speed 1.262 rad/s
+[INFO] [1795833604.517219614] [predictor]: reactive: 1.0 s ahead, error mean 151.7 mm, max 156.6 mm (27 checks); speed 1.259 rad/s
+[INFO] [1795833606.528785252] [predictor]: reactive: 1.0 s ahead, error mean 151.5 mm, max 158.7 mm (48 checks); speed 1.263 rad/s
+[INFO] [1795833608.560214706] [predictor]: reactive: 1.0 s ahead, error mean 151.0 mm, max 158.7 mm (32 checks); speed 1.260 rad/s
+[INFO] [1795833610.620577010] [predictor]: reactive: 1.0 s ahead, error mean 151.9 mm, max 161.2 mm (54 checks); speed 1.261 rad/s
+[INFO] [1795833612.661957832] [predictor]: reactive: 1.0 s ahead, error mean 152.0 mm, max 159.6 mm (49 checks); speed 1.257 rad/s
+[INFO] [1795833614.686862974] [predictor]: reactive: 1.0 s ahead, error mean 151.7 mm, max 160.4 mm (32 checks); speed 1.254 rad/s
+[INFO] [1795833617.021161031] [predictor]: reactive: 1.0 s ahead, error mean 151.5 mm, max 158.6 mm (56 checks); speed 1.253 rad/s
+[INFO] [1795833619.049036569] [predictor]: reactive: 1.0 s ahead, error mean 149.9 mm, max 154.8 mm (33 checks); speed 1.261 rad/s
+[INFO] [1795833621.085218241] [predictor]: reactive: 1.0 s ahead, error mean 152.5 mm, max 160.4 mm (55 checks); speed 1.253 rad/s
+[INFO] [1795833623.139101132] [predictor]: reactive: 1.0 s ahead, error mean 150.8 mm, max 157.5 mm (46 checks); speed 1.247 rad/s
+Traceback (most recent call last):
+  File "/home/celeste/class_project/install/rotating_target/lib/rotating_target/predictor", line 33, in <module>
+    sys.exit(load_entry_point('rotating-target==0.0.0', 'console_scripts', 'predictor')())
+  File "/home/celeste/class_project/install/rotating_target/lib/python3.10/site-packages/rotating_target/predictor.py", line 374, in main
+    rclpy.spin_once(node, timeout_sec=0.5)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 208, in spin_once
+    executor.spin_once(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 812, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 801, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 784, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 685, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException
+[ros2run]: Process exited with failure 1

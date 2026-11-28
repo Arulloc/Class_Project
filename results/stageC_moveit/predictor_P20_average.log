@@ -1,0 +1,134 @@
+[INFO] [1795832486.049419701] [predictor]: Predictor: method=average, horizon=1.0 s, noise=0.0 mm, delay=0.0 s, compensate=True
+[INFO] [1795832492.189706296] [predictor]: average: 1.0 s ahead, error mean 1.3 mm, max 2.3 mm (2 checks); speed 0.311 rad/s
+[INFO] [1795832494.203375289] [predictor]: average: 1.0 s ahead, error mean 1.1 mm, max 2.8 mm (60 checks); speed 0.314 rad/s
+[INFO] [1795832496.251240928] [predictor]: average: 1.0 s ahead, error mean 0.9 mm, max 2.9 mm (61 checks); speed 0.314 rad/s
+[INFO] [1795832498.276789390] [predictor]: average: 1.0 s ahead, error mean 0.9 mm, max 2.4 mm (60 checks); speed 0.318 rad/s
+[INFO] [1795832500.370396041] [predictor]: average: 1.0 s ahead, error mean 1.0 mm, max 3.3 mm (53 checks); speed 0.321 rad/s
+[INFO] [1795832502.390360666] [predictor]: average: 1.0 s ahead, error mean 1.3 mm, max 4.3 mm (45 checks); speed 0.318 rad/s
+[INFO] [1795832504.411163534] [predictor]: average: 1.0 s ahead, error mean 1.1 mm, max 3.5 mm (49 checks); speed 0.317 rad/s
+[INFO] [1795832506.422100533] [predictor]: average: 1.0 s ahead, error mean 1.2 mm, max 3.1 mm (49 checks); speed 0.314 rad/s
+[INFO] [1795832508.443708008] [predictor]: average: 1.0 s ahead, error mean 1.7 mm, max 6.2 mm (40 checks); speed 0.312 rad/s
+[INFO] [1795832510.496102180] [predictor]: average: 1.0 s ahead, error mean 1.5 mm, max 3.5 mm (52 checks); speed 0.315 rad/s
+[INFO] [1795832512.512658939] [predictor]: average: 1.0 s ahead, error mean 1.3 mm, max 3.3 mm (42 checks); speed 0.313 rad/s
+[INFO] [1795832514.539853180] [predictor]: average: 1.0 s ahead, error mean 1.4 mm, max 3.1 mm (43 checks); speed 0.314 rad/s
+[INFO] [1795832516.571169745] [predictor]: average: 1.0 s ahead, error mean 1.3 mm, max 5.0 mm (49 checks); speed 0.315 rad/s
+[INFO] [1795832518.588023310] [predictor]: average: 1.0 s ahead, error mean 1.2 mm, max 4.2 mm (60 checks); speed 0.316 rad/s
+[INFO] [1795832520.626087715] [predictor]: average: 1.0 s ahead, error mean 1.0 mm, max 3.2 mm (60 checks); speed 0.316 rad/s
+[INFO] [1795832522.654914460] [predictor]: average: 1.0 s ahead, error mean 1.0 mm, max 3.6 mm (60 checks); speed 0.314 rad/s
+[INFO] [1795832524.686971922] [predictor]: average: 1.0 s ahead, error mean 0.8 mm, max 1.9 mm (59 checks); speed 0.314 rad/s
+[INFO] [1795832526.776078192] [predictor]: average: 1.0 s ahead, error mean 1.0 mm, max 3.3 mm (57 checks); speed 0.315 rad/s
+[INFO] [1795832528.811647146] [predictor]: average: 1.0 s ahead, error mean 1.7 mm, max 4.2 mm (36 checks); speed 0.311 rad/s
+[INFO] [1795832530.876952535] [predictor]: average: 1.0 s ahead, error mean 1.1 mm, max 2.5 mm (48 checks); speed 0.313 rad/s
+[INFO] [1795832532.902357279] [predictor]: average: 1.0 s ahead, error mean 1.3 mm, max 3.5 mm (36 checks); speed 0.313 rad/s
+[INFO] [1795832534.994170186] [predictor]: average: 1.0 s ahead, error mean 1.3 mm, max 3.4 mm (39 checks); speed 0.314 rad/s
+[INFO] [1795832537.167073356] [predictor]: average: 1.0 s ahead, error mean 1.5 mm, max 3.0 mm (44 checks); speed 0.313 rad/s
+[INFO] [1795832539.252911044] [predictor]: average: 1.0 s ahead, error mean 0.9 mm, max 2.5 mm (33 checks); speed 0.316 rad/s
+[INFO] [1795832541.359716136] [predictor]: average: 1.0 s ahead, error mean 1.3 mm, max 4.3 mm (45 checks); speed 0.314 rad/s
+[INFO] [1795832543.448233171] [predictor]: average: 1.0 s ahead, error mean 0.8 mm, max 2.0 mm (32 checks); speed 0.318 rad/s
+[INFO] [1795832545.572565795] [predictor]: average: 1.0 s ahead, error mean 0.6 mm, max 2.1 mm (31 checks); speed 0.317 rad/s
+[INFO] [1795832547.670106261] [predictor]: average: 1.0 s ahead, error mean 1.3 mm, max 2.9 mm (27 checks); speed 0.315 rad/s
+[INFO] [1795832549.700367802] [predictor]: average: 1.0 s ahead, error mean 1.3 mm, max 3.0 mm (33 checks); speed 0.315 rad/s
+[INFO] [1795832551.795807585] [predictor]: average: 1.0 s ahead, error mean 0.9 mm, max 2.6 mm (40 checks); speed 0.312 rad/s
+[INFO] [1795832553.821919449] [predictor]: average: 1.0 s ahead, error mean 1.7 mm, max 3.4 mm (31 checks); speed 0.311 rad/s
+[INFO] [1795832555.886301515] [predictor]: average: 1.0 s ahead, error mean 1.2 mm, max 3.4 mm (36 checks); speed 0.314 rad/s
+[INFO] [1795832557.905644640] [predictor]: average: 1.0 s ahead, error mean 1.4 mm, max 4.0 mm (34 checks); speed 0.314 rad/s
+[INFO] [1795832559.958672175] [predictor]: average: 1.0 s ahead, error mean 1.7 mm, max 3.1 mm (34 checks); speed 0.315 rad/s
+[INFO] [1795832561.987346378] [predictor]: average: 1.0 s ahead, error mean 0.6 mm, max 1.5 mm (37 checks); speed 0.315 rad/s
+[INFO] [1795832564.041986534] [predictor]: average: 1.0 s ahead, error mean 1.5 mm, max 2.8 mm (30 checks); speed 0.316 rad/s
+[INFO] [1795832566.070210571] [predictor]: average: 1.0 s ahead, error mean 1.4 mm, max 2.4 mm (26 checks); speed 0.316 rad/s
+[INFO] [1795832568.091593950] [predictor]: average: 1.0 s ahead, error mean 0.8 mm, max 1.8 mm (33 checks); speed 0.312 rad/s
+[INFO] [1795832570.128848142] [predictor]: average: 1.0 s ahead, error mean 1.0 mm, max 2.7 mm (32 checks); speed 0.314 rad/s
+[INFO] [1795832572.324589559] [predictor]: average: 1.0 s ahead, error mean 1.2 mm, max 3.1 mm (47 checks); speed 0.312 rad/s
+[INFO] [1795832574.356905506] [predictor]: average: 1.0 s ahead, error mean 1.7 mm, max 3.9 mm (32 checks); speed 0.314 rad/s
+[INFO] [1795832576.417758269] [predictor]: average: 1.0 s ahead, error mean 1.1 mm, max 3.0 mm (40 checks); speed 0.314 rad/s
+[INFO] [1795832578.564144760] [predictor]: average: 1.0 s ahead, error mean 1.0 mm, max 2.8 mm (39 checks); speed 0.314 rad/s
+[INFO] [1795832580.595828507] [predictor]: average: 1.0 s ahead, error mean 1.2 mm, max 3.2 mm (39 checks); speed 0.314 rad/s
+[INFO] [1795832582.620764831] [predictor]: average: 1.0 s ahead, error mean 1.6 mm, max 3.5 mm (41 checks); speed 0.315 rad/s
+[INFO] [1795832584.689804797] [predictor]: average: 1.0 s ahead, error mean 0.7 mm, max 3.7 mm (30 checks); speed 0.316 rad/s
+[INFO] [1795832586.886995530] [predictor]: average: 1.0 s ahead, error mean 0.8 mm, max 2.2 mm (34 checks); speed 0.315 rad/s
+[INFO] [1795832588.916542131] [predictor]: average: 1.0 s ahead, error mean 2.0 mm, max 5.1 mm (33 checks); speed 0.314 rad/s
+[INFO] [1795832590.952654230] [predictor]: average: 1.0 s ahead, error mean 1.0 mm, max 3.2 mm (36 checks); speed 0.311 rad/s
+[INFO] [1795832593.176737111] [predictor]: average: 1.0 s ahead, error mean 2.4 mm, max 5.5 mm (42 checks); speed 0.312 rad/s
+[INFO] [1795832595.214268957] [predictor]: average: 1.0 s ahead, error mean 2.0 mm, max 4.1 mm (33 checks); speed 0.313 rad/s
+[INFO] [1795832597.273225554] [predictor]: average: 1.0 s ahead, error mean 0.8 mm, max 2.6 mm (41 checks); speed 0.315 rad/s
+[INFO] [1795832599.405937031] [predictor]: average: 1.0 s ahead, error mean 0.9 mm, max 2.8 mm (34 checks); speed 0.315 rad/s
+[INFO] [1795832601.429094612] [predictor]: average: 1.0 s ahead, error mean 1.2 mm, max 2.8 mm (39 checks); speed 0.318 rad/s
+[INFO] [1795832603.446877863] [predictor]: average: 1.0 s ahead, error mean 1.3 mm, max 5.9 mm (36 checks); speed 0.316 rad/s
+[INFO] [1795832605.848719033] [predictor]: average: 1.0 s ahead, error mean 1.0 mm, max 4.0 mm (39 checks); speed 0.317 rad/s
+[INFO] [1795832607.880005352] [predictor]: average: 1.0 s ahead, error mean 1.4 mm, max 3.6 mm (36 checks); speed 0.314 rad/s
+[INFO] [1795832609.914331609] [predictor]: average: 1.0 s ahead, error mean 0.8 mm, max 1.9 mm (49 checks); speed 0.310 rad/s
+[INFO] [1795832611.942431157] [predictor]: average: 1.0 s ahead, error mean 1.3 mm, max 4.3 mm (56 checks); speed 0.313 rad/s
+[INFO] [1795832614.013504139] [predictor]: average: 1.0 s ahead, error mean 1.2 mm, max 3.8 mm (54 checks); speed 0.314 rad/s
+[INFO] [1795832616.055691020] [predictor]: average: 1.0 s ahead, error mean 1.2 mm, max 3.6 mm (56 checks); speed 0.316 rad/s
+[INFO] [1795832618.137202127] [predictor]: average: 1.0 s ahead, error mean 0.9 mm, max 3.2 mm (57 checks); speed 0.315 rad/s
+[INFO] [1795832620.203031677] [predictor]: average: 1.0 s ahead, error mean 1.4 mm, max 4.1 mm (48 checks); speed 0.313 rad/s
+[INFO] [1795832622.220760636] [predictor]: average: 1.0 s ahead, error mean 1.4 mm, max 3.2 mm (54 checks); speed 0.315 rad/s
+[INFO] [1795832624.281029566] [predictor]: average: 1.0 s ahead, error mean 1.1 mm, max 3.3 mm (50 checks); speed 0.318 rad/s
+[INFO] [1795832626.312329924] [predictor]: average: 1.0 s ahead, error mean 1.3 mm, max 4.2 mm (49 checks); speed 0.317 rad/s
+[INFO] [1795832628.403863006] [predictor]: average: 1.0 s ahead, error mean 1.2 mm, max 2.9 mm (33 checks); speed 0.312 rad/s
+[INFO] [1795832630.426300936] [predictor]: average: 1.0 s ahead, error mean 1.1 mm, max 4.4 mm (41 checks); speed 0.310 rad/s
+[INFO] [1795832632.450053350] [predictor]: average: 1.0 s ahead, error mean 1.2 mm, max 3.1 mm (51 checks); speed 0.311 rad/s
+[INFO] [1795832634.476774393] [predictor]: average: 1.0 s ahead, error mean 1.1 mm, max 3.1 mm (36 checks); speed 0.311 rad/s
+[INFO] [1795832636.499751172] [predictor]: average: 1.0 s ahead, error mean 1.2 mm, max 4.4 mm (44 checks); speed 0.311 rad/s
+[INFO] [1795832638.527043114] [predictor]: average: 1.0 s ahead, error mean 1.0 mm, max 2.9 mm (47 checks); speed 0.312 rad/s
+[INFO] [1795832640.562165599] [predictor]: average: 1.0 s ahead, error mean 1.2 mm, max 3.5 mm (32 checks); speed 0.315 rad/s
+[INFO] [1795832642.701611625] [predictor]: average: 1.0 s ahead, error mean 1.3 mm, max 3.5 mm (49 checks); speed 0.316 rad/s
+[INFO] [1795832644.729866687] [predictor]: average: 1.0 s ahead, error mean 1.5 mm, max 3.1 mm (35 checks); speed 0.315 rad/s
+[INFO] [1795832646.784923278] [predictor]: average: 1.0 s ahead, error mean 0.8 mm, max 2.6 mm (30 checks); speed 0.318 rad/s
+[INFO] [1795832648.891372402] [predictor]: average: 1.0 s ahead, error mean 1.2 mm, max 3.4 mm (33 checks); speed 0.312 rad/s
+[INFO] [1795832650.952836363] [predictor]: average: 1.0 s ahead, error mean 1.1 mm, max 2.3 mm (43 checks); speed 0.312 rad/s
+[INFO] [1795832653.014068747] [predictor]: average: 1.0 s ahead, error mean 1.4 mm, max 3.8 mm (53 checks); speed 0.310 rad/s
+[INFO] [1795832655.125582651] [predictor]: average: 1.0 s ahead, error mean 1.7 mm, max 4.4 mm (43 checks); speed 0.312 rad/s
+[INFO] [1795832657.172496353] [predictor]: average: 1.0 s ahead, error mean 1.3 mm, max 3.8 mm (49 checks); speed 0.312 rad/s
+[INFO] [1795832659.194458653] [predictor]: average: 1.0 s ahead, error mean 1.4 mm, max 3.9 mm (46 checks); speed 0.316 rad/s
+[INFO] [1795832661.260097605] [predictor]: average: 1.0 s ahead, error mean 1.4 mm, max 3.6 mm (42 checks); speed 0.314 rad/s
+[INFO] [1795832663.288502199] [predictor]: average: 1.0 s ahead, error mean 1.6 mm, max 4.4 mm (47 checks); speed 0.316 rad/s
+[INFO] [1795832665.383268896] [predictor]: average: 1.0 s ahead, error mean 1.9 mm, max 5.8 mm (36 checks); speed 0.317 rad/s
+[INFO] [1795832667.416532244] [predictor]: average: 1.0 s ahead, error mean 1.4 mm, max 3.6 mm (34 checks); speed 0.314 rad/s
+[INFO] [1795832669.461380722] [predictor]: average: 1.0 s ahead, error mean 1.6 mm, max 4.0 mm (44 checks); speed 0.315 rad/s
+[INFO] [1795832671.537183348] [predictor]: average: 1.0 s ahead, error mean 1.1 mm, max 3.2 mm (51 checks); speed 0.310 rad/s
+[INFO] [1795832673.564920276] [predictor]: average: 1.0 s ahead, error mean 1.1 mm, max 3.5 mm (54 checks); speed 0.309 rad/s
+[INFO] [1795832675.600897712] [predictor]: average: 1.0 s ahead, error mean 1.3 mm, max 4.5 mm (48 checks); speed 0.311 rad/s
+[INFO] [1795832677.662152875] [predictor]: average: 1.0 s ahead, error mean 1.1 mm, max 3.3 mm (54 checks); speed 0.316 rad/s
+[INFO] [1795832679.693420498] [predictor]: average: 1.0 s ahead, error mean 1.4 mm, max 4.0 mm (48 checks); speed 0.316 rad/s
+[INFO] [1795832681.725938896] [predictor]: average: 1.0 s ahead, error mean 1.3 mm, max 3.9 mm (45 checks); speed 0.320 rad/s
+[INFO] [1795832683.757604385] [predictor]: average: 1.0 s ahead, error mean 1.4 mm, max 3.2 mm (55 checks); speed 0.318 rad/s
+[INFO] [1795832685.832865144] [predictor]: average: 1.0 s ahead, error mean 1.3 mm, max 2.9 mm (41 checks); speed 0.315 rad/s
+[INFO] [1795832687.854793194] [predictor]: average: 1.0 s ahead, error mean 0.9 mm, max 2.3 mm (33 checks); speed 0.316 rad/s
+[INFO] [1795832689.998559120] [predictor]: average: 1.0 s ahead, error mean 1.3 mm, max 3.0 mm (38 checks); speed 0.313 rad/s
+[INFO] [1795832692.085552812] [predictor]: average: 1.0 s ahead, error mean 1.4 mm, max 3.5 mm (45 checks); speed 0.313 rad/s
+[INFO] [1795832694.104472076] [predictor]: average: 1.0 s ahead, error mean 1.3 mm, max 3.5 mm (47 checks); speed 0.313 rad/s
+[INFO] [1795832696.143825570] [predictor]: average: 1.0 s ahead, error mean 1.3 mm, max 3.7 mm (38 checks); speed 0.313 rad/s
+[INFO] [1795832698.168703210] [predictor]: average: 1.0 s ahead, error mean 1.2 mm, max 3.3 mm (48 checks); speed 0.316 rad/s
+[INFO] [1795832700.222492420] [predictor]: average: 1.0 s ahead, error mean 1.6 mm, max 3.7 mm (37 checks); speed 0.316 rad/s
+[INFO] [1795832702.254248185] [predictor]: average: 1.0 s ahead, error mean 1.7 mm, max 3.7 mm (38 checks); speed 0.316 rad/s
+[INFO] [1795832704.476103565] [predictor]: average: 1.0 s ahead, error mean 1.2 mm, max 3.6 mm (48 checks); speed 0.315 rad/s
+[INFO] [1795832706.833487059] [predictor]: average: 1.0 s ahead, error mean 0.7 mm, max 2.4 mm (34 checks); speed 0.317 rad/s
+[INFO] [1795832708.940300167] [predictor]: average: 1.0 s ahead, error mean 0.9 mm, max 2.5 mm (28 checks); speed 0.314 rad/s
+[INFO] [1795832711.001353406] [predictor]: average: 1.0 s ahead, error mean 1.1 mm, max 5.3 mm (46 checks); speed 0.312 rad/s
+[INFO] [1795832713.029905274] [predictor]: average: 1.0 s ahead, error mean 1.1 mm, max 3.7 mm (50 checks); speed 0.310 rad/s
+[INFO] [1795832715.066989545] [predictor]: average: 1.0 s ahead, error mean 1.2 mm, max 3.8 mm (48 checks); speed 0.311 rad/s
+[INFO] [1795832717.103633027] [predictor]: average: 1.0 s ahead, error mean 1.2 mm, max 3.5 mm (45 checks); speed 0.310 rad/s
+[INFO] [1795832719.225776599] [predictor]: average: 1.0 s ahead, error mean 1.2 mm, max 3.6 mm (53 checks); speed 0.315 rad/s
+[INFO] [1795832721.319466477] [predictor]: average: 1.0 s ahead, error mean 1.4 mm, max 3.9 mm (42 checks); speed 0.317 rad/s
+[INFO] [1795832723.352949691] [predictor]: average: 1.0 s ahead, error mean 1.2 mm, max 3.1 mm (47 checks); speed 0.316 rad/s
+[INFO] [1795832725.409600131] [predictor]: average: 1.0 s ahead, error mean 1.6 mm, max 4.9 mm (45 checks); speed 0.314 rad/s
+[INFO] [1795832727.816974622] [predictor]: average: 1.0 s ahead, error mean 1.2 mm, max 5.0 mm (51 checks); speed 0.315 rad/s
+[INFO] [1795832729.869352280] [predictor]: average: 1.0 s ahead, error mean 0.8 mm, max 2.0 mm (35 checks); speed 0.316 rad/s
+Traceback (most recent call last):
+  File "/home/celeste/class_project/install/rotating_target/lib/rotating_target/predictor", line 33, in <module>
+    sys.exit(load_entry_point('rotating-target==0.0.0', 'console_scripts', 'predictor')())
+  File "/home/celeste/class_project/install/rotating_target/lib/python3.10/site-packages/rotating_target/predictor.py", line 374, in main
+    rclpy.spin_once(node, timeout_sec=0.5)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 208, in spin_once
+    executor.spin_once(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 812, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 801, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 784, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 685, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException
+[ros2run]: Process exited with failure 1
