@@ -83,7 +83,7 @@ if [ "$MOVEIT" = "1" ] && ! ros2 service list | grep -q "^/compute_ik$"; then
   exit 1
 fi
 
-# Put Aleeya's camera (models/standalone_camera.urdf, unchanged) in place,
+# Put camera (models/standalone_camera.urdf, unchanged) in place,
 # removing any old copy first. Its link has gravity turned off, so it stays
 # where it is spawned.
 ros2 service call /delete_entity gazebo_msgs/srv/DeleteEntity \
@@ -119,7 +119,12 @@ for PERIOD in $PERIODS; do
     kill -TERM $TARGET_PID 2>/dev/null; stop_all
     continue
   fi
-  NPUB=$(ros2 topic info /target/handle_true 2>/dev/null | awk '/Publisher count/ {print $3}')
+  # Count the publishers (ask a few times: the first answer can come back empty)
+  for i in 1 2 3 4 5; do
+    NPUB=$(ros2 topic info /target/handle_true 2>/dev/null | awk '/Publisher count/ {print $3}')
+    [ -n "$NPUB" ] && break
+    sleep 2
+  done
   if [ "$NPUB" != "1" ]; then
     echo "  STOPPED: $NPUB publishers on /target/handle_true (must be 1)."
     kill -TERM $TARGET_PID 2>/dev/null; stop_all; exit 1
@@ -146,7 +151,7 @@ for PERIOD in $PERIODS; do
       > "$OUT/predictor_${TAG}.log" 2>&1 &
     sleep 3
     if [ "$MOVEIT" = "1" ]; then
-      # Chris's MoveIt script: wrist 12 cm above the hover point, gripper down
+      # MoveIt script: wrist 12 cm above the hover point, gripper down
       python3 scripts/move_to_point_moveit.py 0.37 0 0.42 --rpy 3.1416 0 0 \
         >> "$OUT/moveit_${TAG}.log" 2>&1 || echo "  (MoveIt move to hover failed; capture.py will move the arm itself)"
     fi
