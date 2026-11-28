@@ -103,8 +103,8 @@ for PERIOD in $PERIODS; do
       > "$OUT/predictor_${TAG}.log" 2>&1 &
     sleep 3
     if [ "$MOVEIT" = "1" ]; then
-      # MoveIt script: wrist 12 cm above the hover point, gripper down
-      python3 scripts/move_to_point_moveit.py 0.37 0 0.42 --rpy 3.1416 0 0 \
+      # Chris's MoveIt script: wrist 12 cm above the hover point, gripper down
+      timeout 60 python3 scripts/move_to_point_moveit.py 0.37 0 0.42 --rpy 3.1416 0 0 \
         >> "$OUT/moveit_${TAG}.log" 2>&1 || echo "  (MoveIt move to hover failed; capture.py will move the arm itself)"
     fi
     # Generous time limit: 10 tries at a 20 s spin take about 4 minutes
