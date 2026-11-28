@@ -13,6 +13,9 @@
 # Usage:  bash scripts/run_stageB.sh          full set (about 25-30 minutes)
 #         bash scripts/run_stageB.sh test     10 s spin, reactive + kalman, 3 tries each
 #         NOISE=0.005 bash scripts/run_stageB.sh
+#         MOVEIT=1 ... use MoveIt (Chris's move_to_point_moveit.py) to move the
+#             arm to hover, and MoveIt's inverse kinematics for the two poses.
+#             MoveIt must already be running. Results go to a *_moveit folder.
 #             same, but the predictor sees positions with 5 mm of noise
 #             (imitating a camera); results go to results/stageB_noise5mm/
 
@@ -24,6 +27,16 @@ if [ "$F_NOISE" = "0.0" ]; then
   OUT="$(pwd)/results/stageB"
 else
   OUT="$(pwd)/results/stageB_noise$(python3 -c "print(f'{$NOISE*1000:g}')")mm"
+fi
+MOVEIT=${MOVEIT:-0}
+IK_SOURCE=own
+if [ "$MOVEIT" = "1" ]; then
+  OUT="${OUT}_moveit"
+  IK_SOURCE=moveit
+  if ! ros2 service list | grep -q "^/compute_ik$"; then
+    echo "STOPPED: MOVEIT=1 but MoveIt is not running (no /compute_ik service)."
+    exit 1
+  fi
 fi
 mkdir -p "$OUT"
 export PYTHONUNBUFFERED=1
@@ -41,6 +54,7 @@ fi
   echo "commit: $(git rev-parse --short HEAD)"
   echo "uncommitted changes: $(git status --porcelain | wc -l) files"
   echo "methods: $METHODS   periods: $PERIODS   trials: $TRIALS   noise: $F_NOISE m"
+  echo "arm poses from: $IK_SOURCE"
 } > "$OUT/run_info.txt"
 
 stop_all() {
@@ -71,7 +85,12 @@ for PERIOD in $PERIODS; do
     kill -TERM $TARGET_PID 2>/dev/null; stop_all
     continue
   fi
-  NPUB=$(ros2 topic info /target/handle_true 2>/dev/null | awk '/Publisher count/ {print $3}')
+  # Count the publishers (ask a few times: the first answer can come back empty)
+  for i in 1 2 3 4 5; do
+    NPUB=$(ros2 topic info /target/handle_true 2>/dev/null | awk '/Publisher count/ {print $3}')
+    [ -n "$NPUB" ] && break
+    sleep 2
+  done
   if [ "$NPUB" != "1" ]; then
     echo "  STOPPED: $NPUB publishers on /target/handle_true (must be 1)."
     kill -TERM $TARGET_PID 2>/dev/null; stop_all; exit 1
@@ -83,10 +102,15 @@ for PERIOD in $PERIODS; do
       -p spin_period:=$F_PERIOD -p noise_std:=$F_NOISE \
       > "$OUT/predictor_${TAG}.log" 2>&1 &
     sleep 3
+    if [ "$MOVEIT" = "1" ]; then
+      # MoveIt script: wrist 12 cm above the hover point, gripper down
+      python3 scripts/move_to_point_moveit.py 0.37 0 0.42 --rpy 3.1416 0 0 \
+        >> "$OUT/moveit_${TAG}.log" 2>&1 || echo "  (MoveIt move to hover failed; capture.py will move the arm itself)"
+    fi
     # Generous time limit: 10 tries at a 20 s spin take about 4 minutes
     timeout 900 python3 scripts/capture.py --ros-args -p use_sim_time:=true \
       -p method:=$M -p spin_period:=$F_PERIOD -p trials:=$TRIALS \
-      -p log_file:="$OUT/stageB_${TAG}.csv" > "$OUT/capture_${TAG}.log" 2>&1
+      -p ik_source:=$IK_SOURCE -p log_file:="$OUT/stageB_${TAG}.csv" > "$OUT/capture_${TAG}.log" 2>&1
     STATUS=$?
     pkill -f "rotating_target/predictor" > /dev/null 2>&1
     F="$OUT/stageB_${TAG}.csv"
