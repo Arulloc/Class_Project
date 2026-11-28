@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """demo_pickup.py: for the class demo - make the captured target go with the gripper.
 
-The simulated gripper cannot close (report 5.8), so a real grasp is not
+The simulated gripper cannot close, so a real grasp is not
 possible in Gazebo Classic. For the demo, this program imitates one:
 
   1. It watches the capture program's descent command to learn the meeting
@@ -78,7 +78,9 @@ class DemoPickup(Node):
         self.joint_hist = []            # (t, q)
         self.q_now = None
         self.t_meet = None
-        self.cube0 = None               # target pose read from Gazebo, with its time
+        self.cube0 = None               # target pose read from Gazebo
+        self.target_reading = None      # (time, Gazebo's answer) waiting to be compared
+        self.t_read = 0.0
         self.yaw_offset = None          # target yaw minus handle angle
         self.T_grip_cube = None         # target pose in the gripper frame once attached
         self.busy = False
@@ -114,6 +116,7 @@ class DemoPickup(Node):
         if not self.truth or t > self.truth[-1][0]:
             self.truth.append((t, p.x, p.y, p.z))
             self.truth = self.truth[-300:]
+            self.use_target_reading()
 
     def on_traj(self, msg):
         # The capture program's descent is the only command with three points
@@ -170,8 +173,16 @@ class DemoPickup(Node):
     def read_target_once(self):
         """Read the target's pose from Gazebo once, to learn how its yaw
         relates to the handle angle and where its centre is."""
-        if self.cube0 is not None or self.busy or not self.get_cli.service_is_ready():
+        if self.cube0 is not None:
             return
+        if self.target_reading is not None:
+            if time.monotonic() - self.t_read < 3.0:
+                return                  # still waiting to compare the last reading
+            self.target_reading = None
+        if self.busy or not self.get_cli.service_is_ready():
+            self.get_logger().info('Waiting for Gazebo to answer...')
+            return
+        self.t_read = time.monotonic()
         req = GetEntityState.Request()
         req.name, req.reference_frame = self.name, 'world'
         self.busy = True
@@ -183,10 +194,23 @@ class DemoPickup(Node):
         if res is None or not res.success:
             self.get_logger().warn(f'Could not read {self.name} from Gazebo yet.')
             return
-        t = Time.from_msg(res.header.stamp).nanoseconds * 1e-9
+        # The true handle position arrives only about 10 times a second, so
+        # the comparison waits until a reading from after this moment arrives.
+        self.target_reading = (Time.from_msg(res.header.stamp).nanoseconds * 1e-9, res)
+        self.use_target_reading()
+
+    def use_target_reading(self):
+        if self.cube0 is not None or self.target_reading is None:
+            return
+        t, res = self.target_reading
+        if t <= 0 and self.truth:
+            t = self.truth[-1][0]       # no time stamp given: use the latest reading
+        if not self.truth or self.truth[-1][0] < t:
+            return                      # wait for the next handle reading
         h = self.handle_at(t)
         if h is None:
-            return                          # try again next second
+            self.target_reading = None  # too old to compare: read Gazebo again
+            return
         p, o = res.state.pose.position, res.state.pose.orientation
         R = quat_to_rot(o.x, o.y, o.z, o.w)
         yaw = math.atan2(R[1, 0], R[0, 0])
@@ -199,6 +223,10 @@ class DemoPickup(Node):
 
     def check_capture(self):
         if self.chain is None or self.cube0 is None:
+            if not getattr(self, 'warned', False):
+                self.warned = True
+                self.get_logger().warn('Meeting time reached but the target pose has '
+                                       'not been read from Gazebo yet; cannot attach.')
             return
         # Wait until both the joints and the true handle position are known
         # on both sides of the meeting time
