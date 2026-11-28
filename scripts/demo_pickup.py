@@ -81,6 +81,8 @@ class DemoPickup(Node):
         self.cube0 = None               # target pose read from Gazebo
         self.target_reading = None      # (time, Gazebo's answer) waiting to be compared
         self.t_read = 0.0
+        self.read_busy = False
+        self.t_ask = 0.0
         self.yaw_offset = None          # target yaw minus handle angle
         self.T_grip_cube = None         # target pose in the gripper frame once attached
         self.busy = False
@@ -179,17 +181,23 @@ class DemoPickup(Node):
             if time.monotonic() - self.t_read < 3.0:
                 return                  # still waiting to compare the last reading
             self.target_reading = None
-        if self.busy or not self.get_cli.service_is_ready():
-            self.get_logger().info('Waiting for Gazebo to answer...')
+        if not self.get_cli.service_is_ready():
+            self.get_logger().info('Waiting for Gazebo to offer its state service...')
             return
-        self.t_read = time.monotonic()
+        if self.read_busy:
+            if time.monotonic() - self.t_ask < 2.0:
+                return
+            # ROS 2 sometimes loses a request sent just after a service is
+            # found; if there is no answer within 2 s, ask again.
+            self.get_logger().info('No answer from Gazebo; asking again.')
+        self.t_ask = self.t_read = time.monotonic()
         req = GetEntityState.Request()
         req.name, req.reference_frame = self.name, 'world'
-        self.busy = True
+        self.read_busy = True
         self.get_cli.call_async(req).add_done_callback(self.on_target_read)
 
     def on_target_read(self, fut):
-        self.busy = False
+        self.read_busy = False
         res = fut.result()
         if res is None or not res.success:
             self.get_logger().warn(f'Could not read {self.name} from Gazebo yet.')
@@ -257,8 +265,10 @@ class DemoPickup(Node):
 
     def carry(self):
         # About 30 updates a second, one request at a time
-        if self.busy or time.monotonic() - self.last_set < 0.033:
+        if time.monotonic() - self.last_set < 0.033:
             return
+        if self.busy and time.monotonic() - self.last_set < 0.5:
+            return                      # previous move not answered yet (resend after 0.5 s)
         if not self.set_cli.service_is_ready():
             return
         T = self.grip_pose(self.q_now) @ self.T_grip_cube
