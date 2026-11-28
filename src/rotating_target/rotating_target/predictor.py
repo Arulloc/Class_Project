@@ -219,8 +219,12 @@ class Predictor(Node):
         theta_future = theta_meas + omega * ahead
 
         self.publish_prediction(t_future, theta_future)
+        # For the capture program: with delay correction it gets the time the
+        # measurement was taken, so it can allow for the measurement's age;
+        # without, the late measurement is labelled as current (Stage D).
+        t_label = t if self.compensate else now
         self.state_pub.publish(
-            Float64MultiArray(data=[t, theta_meas, omega, now]))
+            Float64MultiArray(data=[t_label, theta_meas, omega, now]))
         self.pending.append((now, t_future, theta_future, omega))
         if self.first_pred_t is None:
             self.first_pred_t = now
